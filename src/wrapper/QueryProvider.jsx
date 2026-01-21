@@ -48,7 +48,7 @@ const QueryProvider = ({ children }) => {
         ${closing ? "-translate-y-full" : "translate-y-0"}`}
       >
         <video
-          src="/banner_video_2.mp4"
+          src=""
           autoPlay
           muted
           playsInline
