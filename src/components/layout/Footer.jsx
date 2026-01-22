@@ -15,7 +15,7 @@ const Footer = () => {
 
           {/* Logo & Social */}
           <div className="flex flex-col items-center sm:items-start">
-            <Image src="/logo2.svg" width={50} height={50} alt="Logo" className="dark:invert" />
+            <Image src="/logo2.svg" width={80} height={80} alt="Logo" className="" />
             <div className="flex gap-4 mt-4">
               <FaFacebook size={28} className="text-blue-500 cursor-pointer" />
               <AiFillTwitterCircle size={30} className="text-[#1c9ae8] cursor-pointer" />
@@ -28,8 +28,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-3 text-foreground">Contact Us</h4>
             <p className="text-sm text-muted-foreground">
-              email: support@rahnimo.com <br />
-              mobile: +8801711111111
+              email: rahnimodesigns@gmail.com <br />
+              mobile: +8801976761030
             </p>
           </div>
 
@@ -40,11 +40,11 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                className="w-full px-4 py-2 rounded bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
               />
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-2 rounded transition-colors"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition-colors"
               >
                 Subscribe
               </button>
