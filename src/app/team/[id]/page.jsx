@@ -78,7 +78,7 @@ const TeamDeatils = () => {
                     </h1>
                 </div>
                 <div className='order-2 md:order-1'>
-                    <p className='text-muted-foreground text-xl uppercase'>{member?.description}</p>
+                    <p className='text-muted-foreground text-xl uppercase whitespace-pre-wrap'>{member?.description}</p>
                 </div>
             </div>
         </div>
