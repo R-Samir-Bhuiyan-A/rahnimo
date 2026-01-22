@@ -1,8 +1,10 @@
 // import type { Metadata } from "next";
-import {Montserrat} from "next/font/google"
+import { Montserrat } from "next/font/google"
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "../components/layout/Navbar"
 import Footer from "../components/layout/Footer"
+import ThemeProvider from "../wrapper/ThemeProvider"
 import LenisProvider from "../wrapper/LenisProvider"
 import QueryProvider from "../wrapper/QueryProvider"
 
@@ -34,13 +36,30 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} antialiased`}
       >
-        <LenisProvider>
-          <QueryProvider>
-            <Navbar />
-            {children}
-            <Footer />
-          </QueryProvider>
-        </LenisProvider>
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`
+            (function() {
+              try {
+                var localTheme = localStorage.getItem('theme');
+                var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+                if (!localTheme && supportDarkMode) {
+                  document.documentElement.classList.add('dark');
+                } else if (localTheme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (e) {}
+            })();
+          `}
+        </Script>
+        <ThemeProvider>
+          <LenisProvider>
+            <QueryProvider>
+              <Navbar />
+              {children}
+              <Footer />
+            </QueryProvider>
+          </LenisProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

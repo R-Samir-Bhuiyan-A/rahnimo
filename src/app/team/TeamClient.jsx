@@ -42,10 +42,10 @@ const TeamClient = () => {
                                 />
 
                                 {/* Blue hover overlay */}
-                                <div className="absolute inset-0 bg-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                         </Link>
-                        <h1 className='font-bold text-xl tracking-widest font-montserrat '>
+                        <h1 className='font-bold text-xl tracking-widest font-montserrat text-foreground'>
                             {
                                 team?.designation
                                     .trim()
@@ -59,7 +59,7 @@ const TeamClient = () => {
                             }
 
                         </h1>
-                        <h1 className='font-bold text-blue-400 text-xl tracking-widest font-montserrat '>
+                        <h1 className='font-bold text-primary text-xl tracking-widest font-montserrat '>
                             {
                                 team?.name
                                     .split(" ")

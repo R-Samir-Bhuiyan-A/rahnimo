@@ -28,7 +28,7 @@ const ProjectDetails = () => {
     <section className="px-6 py-14 max-w-7xl mx-auto ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* IMAGE */}
-        <div className="bg-gray-50 rounded-2xl shadow-lg p-6 flex justify-center items-center">
+        <div className="bg-secondary/50 rounded-2xl shadow-lg p-6 flex justify-center items-center">
           <Image
             src={project?.image || "/placeholder.png"}
             width={520}
@@ -42,7 +42,7 @@ const ProjectDetails = () => {
         {/* CONTENT */}
         <div className="space-y-4">
 
-          <span className="inline-block bg-fuchsia-100 text-fuchsia-700 px-4 py-1 rounded-full text-sm font-semibold">
+          <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-semibold">
             {project?.category}
           </span>
 
@@ -50,7 +50,7 @@ const ProjectDetails = () => {
             {project?.projectTitle}
           </h1>
 
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             {project?.shortDescription}
           </p>
 
@@ -77,13 +77,13 @@ const ProjectDetails = () => {
                   className={
                     i < project?.clientRating
                       ? "text-yellow-400"
-                      : "text-gray-300"
+                      : "text-muted"
                   }
                 />
               ))}
             </div>
 
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-muted-foreground">
               ({project?.clientRating || 0}/5)
             </span>
           </div>

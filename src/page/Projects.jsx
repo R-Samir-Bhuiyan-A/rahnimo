@@ -27,7 +27,7 @@ const Projects = () => {
     : projects.filter((p) => p.category === selectedCategory);
 
   if (isLoading) return <Spinner />;
-  if (isError) return <p className="text-center text-red-500">Failed to load projects.</p>;
+  if (isError) return <p className="text-center text-destructive">Failed to load projects.</p>;
 
   return (
     <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
@@ -37,8 +37,8 @@ const Projects = () => {
             key={cat}
             onClick={() => setSelectedCategory(cat)}
             className={`px-5 py-2 rounded-full border transition-all duration-300 ${selectedCategory === cat
-              ? "bg-fuchsia-600 text-white border-fuchsia-600"
-              : "bg-white text-gray-700 border-gray-200 hover:border-fuchsia-600"
+              ? "bg-primary text-primary-foreground border-primary"
+              : "bg-background text-foreground border-border hover:border-primary hover:text-primary"
               }`}
           >
             {cat}
@@ -50,21 +50,23 @@ const Projects = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 space-y-5">
         {filteredProjects.map((item) => (
           <Link href={`/work/${item._id}`} key={item._id}>
-            <div className="border-b-2 pb-2">
-              <Image
-                src={item.image}
-                alt={item.projectTitle}
-                width={200}
-                height={200}
-                loading="lazy"
-                className="w-full h-full object-contain"
-              />
+            <div className="border-b-2 border-border pb-2 group">
+              <div className="overflow-hidden rounded-md mb-2">
+                <Image
+                  src={item.image}
+                  alt={item.projectTitle}
+                  width={200}
+                  height={200}
+                  loading="lazy"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div>
-                <span className="text-xs uppercase tracking-widest text-fuchsia-600 font-semibold">
+                <span className="text-xs uppercase tracking-widest text-primary font-semibold">
                   {item.category}
                 </span>
 
-                <h3 className="text-lg font-bold ">
+                <h3 className="text-lg font-bold text-foreground">
                   {item.projectTitle}
                 </h3>
               </div>
@@ -74,7 +76,7 @@ const Projects = () => {
       </div>
 
       {filteredProjects.length === 0 && (
-        <p className="text-center text-gray-400 mt-10">No projects found in this category.</p>
+        <p className="text-center text-muted-foreground mt-10">No projects found in this category.</p>
       )}
 
     </section>

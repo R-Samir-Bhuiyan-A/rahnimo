@@ -15,7 +15,7 @@ const ContactClient = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-linear-to-r from-[#cee0da] to-[#fcfcfc] mx-5 md:mx-10 ml-5 md:ml-14 my-20 rounded-2xl shadow">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#cee0da] to-[#fcfcfc] dark:from-background dark:to-muted text-foreground mx-5 md:mx-10 ml-5 md:ml-14 my-20 rounded-2xl shadow transition-all duration-300">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
         {/* Left Card */}
         <motion.div
@@ -26,27 +26,27 @@ const ContactClient = () => {
           className="col-span-2 p-3 md:p-8 flex flex-col justify-between">
           <div className="flex flex-col gap-28">
             <div className="flex flex-col gap-5">
-                <Image
-                  src="https://i.pravatar.cc/80"
-                  width={200}
-                  height={200}
-                  alt="Image"
-                  className="w-16 h-16 rounded-full"
-                />
-                <div>
-                  <h3 className="font-semibold text-3xl">Andrew Hughes -</h3>
-                  <p className="text-2xl mt-2 text-gray-600">
-                    Project Coordinator,<br /> can guide your project’s<br /> initial steps.
-                  </p>
-                </div>
+              <Image
+                src="https://i.pravatar.cc/80"
+                width={200}
+                height={200}
+                alt="Image"
+                className="w-16 h-16 rounded-full"
+              />
+              <div>
+                <h3 className="font-semibold text-3xl">Andrew Hughes -</h3>
+                <p className="text-2xl mt-2 text-muted-foreground">
+                  Project Coordinator,<br /> can guide your project’s<br /> initial steps.
+                </p>
               </div>
-      
+            </div>
+
             <h1 className="text-4xl md:text-7xl font-bold leading-tight">
               Every project <br /> <span className="opacity-55">starts with a plan.</span>
             </h1>
           </div>
 
-          <div className="flex gap-3 mt-6 text-gray-800">
+          <div className="flex gap-3 mt-6 text-foreground">
             <a
               href="#" target='_blank'
             >
@@ -123,22 +123,22 @@ const ContactClient = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1"
+              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1"
+              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
             <input
               type="text"
               placeholder="Phone"
-              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1"
+              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
             <textarea
               rows="3"
               placeholder="Message"
-              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1"
+              className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
 
             <Button

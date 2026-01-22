@@ -49,7 +49,7 @@ const TeamDeatils = () => {
 
 
                     </h1>
-                    <h1 className='font-bold text-blue-400 text-xl tracking-widest font-montserrat mb-5'>
+                    <h1 className='font-bold text-primary text-xl tracking-widest font-montserrat mb-5'>
                         {
                             member?.name && member.name.split(" ").join(" ")
                         }
@@ -57,7 +57,7 @@ const TeamDeatils = () => {
                     </h1>
                 </div>
                 <div className='order-2 md:order-1'>
-                    <p className='text-gray-500 text-xl uppercase'>{member?.description}</p>
+                    <p className='text-muted-foreground text-xl uppercase'>{member?.description}</p>
                 </div>
             </div>
         </div>

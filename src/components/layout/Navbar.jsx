@@ -6,6 +6,8 @@ import Link from 'next/link';
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { usePathname } from 'next/navigation';
+import { useTheme } from '../../wrapper/ThemeProvider';
+import { Sun, Moon } from 'lucide-react';
 
 
 const rightMenuItems = [
@@ -20,10 +22,20 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen)
     const pathname = usePathname()
+    const { theme, toggleTheme, mounted } = useTheme();
+
+    // Prevent hydration mismatch for icon
+    // Prevent hydration mismatch for icon
+    // if (!mounted) return null; // Removed to prevent FOUC
+    // Or return a skeleton navbar? No, returning null for the whole navbar is bad for SEO/LCP.
+    // Better: Render the navbar but keep the toggle icon static or hidden until mounted.
+    // Actually, since we're using "use client", we can just wait for mount to show the specific icon or use a generic one.
+    // But returning null for the WHOLE component is bad.
+    // Let's just return the navbar and handle the icon safely.
 
     return (
         <>
-            <nav className="w-full sticky top-0 bg-[#f8f8f8] border-b border-gray-100 z-70">
+            <nav className="w-full sticky top-0 bg-secondary/80 backdrop-blur-md border-b border-border z-50 transition-colors duration-300">
                 <div className="max-w-full mx-auto flex items-stretch justify-between h-15 pr-10">
 
                     {/* Left side: Logo Box / Menu Toggle */}
@@ -49,17 +61,17 @@ const Navbar = () => {
                                 />
                             </motion.div>
                             {/* 🔥 Vertical Text */}
-                            <div className="absolute left-2 top-45 h-auto flex items-center">
+                            <div className="absolute left-2 top-60 h-auto flex items-center">
                                 <p className="rotate-180 [writing-mode:vertical-rl] 
                                     text-xs tracking-[0.4em] font-semibold text-gray-400">
-                                    ARCHITECTURE OF IMAGINATION
+                                    THE ARCHITECTURE OF IMAGINATION
                                 </p>
                             </div>
                         </div>
                     </Link>
 
-                    <div className="hidden lg:flex items-center">
-                        <ul className="flex gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-[#8f8f8f]">
+                    <div className="hidden lg:flex items-center gap-6">
+                        <ul className="flex gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-muted-foreground">
                             {
                                 rightMenuItems.map((item, i) => {
                                     const isActive = pathname === item.url
@@ -69,7 +81,7 @@ const Navbar = () => {
                                             key={i}
                                             href={item.url}
                                             className={`relative font-bold hover:opacity-70 pb-1
-                                            ${isActive ? "text-black" : ""}
+                                            ${isActive ? "text-foreground" : ""}
                                             `}
                                         >
                                             {item.urlName}
@@ -87,14 +99,24 @@ const Navbar = () => {
                             }
 
                         </ul>
+                        <button
+                            onClick={toggleTheme}
+                            className="p-2 rounded-full hover:bg-muted transition-colors cursor-pointer"
+                            aria-label="Toggle Dark Mode"
+                        >
+                            {theme === 'dark' ? <Sun size={20} className="text-foreground" /> : <Moon size={20} className="text-foreground" />}
+                        </button>
                     </div>
                     {/* Right side: Static Menu Links */}
                     <div className='flex items-center md:hidden'>
-                        <button onClick={toggleMenu}>
+                        <button onClick={toggleTheme} className="mr-4 p-2 rounded-full hover:bg-muted transition-colors cursor-pointer">
+                            {theme === 'dark' ? <Sun size={20} className="text-foreground" /> : <Moon size={20} className="text-foreground" />}
+                        </button>
+                        <button onClick={toggleMenu} className="cursor-pointer">
                             {
                                 isOpen
-                                    ? (<CloseIcon className="text-gray-800" />)
-                                    : (<MenuIcon className="text-gray-800" />)
+                                    ? (<CloseIcon className="text-foreground" />)
+                                    : (<MenuIcon className="text-foreground" />)
                             }
                         </button>
                     </div>
@@ -102,8 +124,8 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 {
                     isOpen && (
-                        <div className='md:hidden bg-white px-4 pt-2 pb-4 space-y-2 shadow-md'>
-                            <ul className="flex flex-col items-end gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-[#8f8f8f]">
+                        <div className='md:hidden bg-background px-4 pt-2 pb-4 space-y-2 shadow-md border-b border-border'>
+                            <ul className="flex flex-col items-end gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-muted-foreground">
                                 {
                                     rightMenuItems.map((item, i) => {
                                         const isActive = pathname === item.url
@@ -113,7 +135,7 @@ const Navbar = () => {
                                                 key={i}
                                                 href={item.url}
                                                 className={`relative font-bold hover:opacity-70 pb-1
-                                                ${isActive ? "text-black" : ""}`}
+                                                ${isActive ? "text-foreground" : ""}`}
                                             >
                                                 {item.urlName}
 

@@ -1,31 +1,124 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #020617;
+  /* Slate 950 - Strong contrast for light mode */
+
+  --card: #ffffff;
+  --card-foreground: #020617;
+
+  --popover: #ffffff;
+  --popover-foreground: #020617;
+
+  --primary: #c026d3;
+  /* Fuchsia 600 */
+  --primary-foreground: #fafafa;
+
+  --secondary: #f1f5f9;
+  /* Slate 100 - Very subtle off-white for light mode sections */
+  --secondary-foreground: #0f172a;
+  /* Slate 900 */
+
+  --muted: #f1f5f9;
+  /* Slate 100 */
+  --muted-foreground: #64748b;
+  /* Slate 500 */
+
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+
+  --destructive: #ef4444;
+  /* Red 500 */
+  --destructive-foreground: #fafafa;
+
+  --border: #e2e8f0;
+  /* Slate 200 */
+  --input: #e2e8f0;
+  --ring: #c026d3;
+
+  --radius: 0.5rem;
 }
 
-body{
-  scrollbar-width: none;
-  background: var(--bg);
+.dark {
+  --background: #020617;
+  /* Slate 950 - Deep Premium Dark */
+  --foreground: #f1f5f9;
+  /* Slate 100 - Soft White */
+
+  --card: #1e293b;
+  /* Slate 800 - Elevated surface */
+  --card-foreground: #f1f5f9;
+
+  --popover: #020617;
+  --popover-foreground: #f1f5f9;
+
+  --primary: #e879f9;
+  /* Fuchsia 400 - Glowing variant for dark mode */
+  --primary-foreground: #020617;
+  /* Slate 950 text on primary */
+
+  --secondary: #0f172a;
+  /* Slate 900 - Darker than card, for Nav/Footer */
+  --secondary-foreground: #f1f5f9;
+
+  --muted: #1e293b;
+  /* Slate 800 */
+  --muted-foreground: #94a3b8;
+  /* Slate 400 - Muted text */
+
+  --accent: #1e293b;
+  --accent-foreground: #f1f5f9;
+
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f1f5f9;
+
+  --border: #1e293b;
+  /* Slate 800 - Subtle borders */
+  --input: #1e293b;
+  --ring: #e879f9;
+}
+
+
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-*{
+
+* {
   scrollbar-width: none;
-  cursor: url("/logo2.svg") 16 16, auto;
+  border-color: var(--border);
+  /* Default border color */
+  cursor: url("/cursor.svg") 40 31, auto;
 }

@@ -128,21 +128,23 @@ const WorkClient = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 {projects.map((item, i) => (
                     <Link href={`/work/${item._id}`} key={i}>
-                        <div className="border-b-2 pb-2">
-                            <Image
-                                src={item.image}
-                                alt={item.projectTitle}
-                                width={200}
-                                height={200}
-                                loading="lazy"
-                                className="w-full h-full object-contain"
-                            />
+                        <div className="border-b-2 border-border pb-2 group">
+                            <div className="overflow-hidden rounded-md mb-2">
+                                <Image
+                                    src={item.image}
+                                    alt={item.projectTitle}
+                                    width={200}
+                                    height={200}
+                                    loading="lazy"
+                                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                />
+                            </div>
                             <div>
-                                <span className="text-xs uppercase tracking-widest text-fuchsia-600 font-semibold">
+                                <span className="text-xs uppercase tracking-widest text-primary font-semibold">
                                     {item.category}
                                 </span>
 
-                                <h3 className="text-lg font-bold ">
+                                <h3 className="text-lg font-bold text-foreground">
                                     {item.projectTitle}
                                 </h3>
                             </div>

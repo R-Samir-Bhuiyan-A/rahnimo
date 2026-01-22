@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const AboutClient = () => {
   return (
-    <section className="w-full bg-white text-gray-900">
+    <section className="w-full bg-background text-foreground">
 
       {/* HERO VIDEO */}
       <div className="relative overflow-hidden">
@@ -45,19 +45,19 @@ const AboutClient = () => {
           className="space-y-10"
         >
           <div className="space-y-2">
-            <div className="w-20 h-[3px] bg-black" />
-            <h5 className="uppercase tracking-[0.25em] font-semibold text-sm text-gray-700">
+            <div className="w-20 h-[3px] bg-foreground" />
+            <h5 className="uppercase tracking-[0.25em] font-semibold text-sm text-muted-foreground">
               About Studio Rahnimo
             </h5>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            We design <br className="hidden md:block" /> experiences.
+            A multidisciplinary  <br className="hidden md:block" /> design practice.
           </h2>
 
-          <p className="text-lg font-medium text-gray-700 border-t pt-6">
-            We made our name rethinking the impact workplace has on work,
-            but today our reach extends far beyond the physical environment.
+          <p className="text-lg font-medium text-muted-foreground border-t border-border pt-6">
+            Rahnimo is built on clarity, craft, and culture.
+            We design for impact today, relevance tomorrow, and meaning that lasts.
           </p>
         </motion.div>
 
@@ -67,23 +67,26 @@ const AboutClient = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-8 text-gray-600 leading-relaxed"
+          className="space-y-8 text-muted-foreground leading-relaxed"
         >
           <p>
-            Every client has a story. We treat each workspace as a powerful
-            storytelling medium — discovering not only what teams need, but
-            who they are and how they work.
+            We believe every space, brand, and object carries a story. At Rahnimo, design is not decoration—it is strategy, emotion, and experience woven together.
+
+            We work across Interior Architecture, Furniture Design, Brand Identity, Graphic Design, and Digital Experiences, shaping environments and brands that feel intentional, timeless, and human.
           </p>
 
           <p>
-            This mindset shapes every service we deliver: interiors,
-            branding, environmental graphics, tenant improvements, and
-            strategic design consulting.
+            Our process begins with understanding—how a space is used, how a brand speaks, and how people move, feel, and connect. Beyond measurements, materials, and visuals, we study behavior, culture, and purpose.
           </p>
 
-          <p className="border-t pt-6">
-            We’re inspired by what’s happening in the design world —
-            and proud to help set its direction.
+          <p className="border-t border-border pt-6">
+            Interior Architecture & Spatial Design
+            Custom Furniture Design
+            Brand Identity & Visual Systems
+            Graphic Design & Environmental Graphics
+            Website & Digital Design
+
+            Each project is treated as a complete narrative—where form, function, and identity align seamlessly.
           </p>
         </motion.div>
 
