@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import Image from 'next/image';
+import BestPriceIcon from '../icons/BestPriceIcon';
 
 const Footer = () => {
   const formRef = useRef();
@@ -53,7 +54,8 @@ const Footer = () => {
                 <FiInstagram size={28} className="text-[#ff3347] cursor-pointer" />
               </a>
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">Best price guarantee</p>
+            {/* <p className="mt-2 text-sm text-muted-foreground">Best price guarantee</p> */}
+            <BestPriceIcon className="mt-2 sm:w-[30%] w-[50%]" />
           </div>
 
           {/* Contact */}
