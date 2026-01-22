@@ -1,3 +1,10 @@
+"use client";
+
+import { useQuery } from '@tanstack/react-query';
+import { useParams } from 'next/navigation';
+import React from 'react';
+import useAxios from '../../../hooks/useAxios';
+import Image from 'next/image';
 import Skeleton from '../../../components/ui/Skeleton';
 
 const TeamDeatils = () => {
