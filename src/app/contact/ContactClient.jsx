@@ -1,5 +1,6 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
@@ -9,10 +10,39 @@ import { Reveal } from "../../components/animations/Reveal";
 
 const ContactClient = () => {
   const formRef = useRef();
+  const [selectedServices, setSelectedServices] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const toggleService = (service) => {
+    setSelectedServices((prev) =>
+      prev.includes(service)
+        ? prev.filter((s) => s !== service)
+        : [...prev, service]
+    );
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log("Form submitted!");
+    setIsSubmitting(true);
+
+    emailjs
+      .sendForm('rahnimo', 'message', formRef.current, {
+        publicKey: 'L4eEIrjWLXnuUtiP1',
+      })
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          setSelectedServices([]);
+          formRef.current.reset();
+        },
+        (error) => {
+          console.error("FAILED...", error.text);
+          alert("Failed to send message, please try again.");
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -33,17 +63,17 @@ const ContactClient = () => {
                   width={250}
                   height={250}
                   alt="Image"
-                  className="w-16 h-16 rounded-full"
+                  className="w-100 h-100 rounded-full"
                 />
               </Reveal>
-              <Reveal delay={0.1}>
+              {/* <Reveal delay={0.1}>
                 <div>
                   <h3 className="font-semibold text-3xl">Andrew Hughes -</h3>
                   <p className="text-2xl mt-2 text-muted-foreground">
                     Project Coordinator,<br /> can guide your project’s<br /> initial steps.
                   </p>
                 </div>
-              </Reveal>
+              </Reveal> */}
             </div>
 
             <Reveal delay={0.2}>
@@ -102,16 +132,24 @@ const ContactClient = () => {
           <p className="text-xs text-gray-400 my-2 ">I&apos;m interested in</p>
           <div className="flex flex-wrap gap-2 mb-6">
             {[
-              "UI/UX Design",
-              "Website",
+              "Interior Design",
+              "Furniture Design",
+              "Product Design",
+              "Package Design",
+              "Graphics Design",
               "Brand Identity",
-              "Content Production",
-              "Illustration",
+              "Website",
+              "UI/UX Design",
               "Other",
             ].map((item) => (
               <button
                 key={item}
-                className="px-3 py-1 rounded-full border border-gray-600 text-xs text-gray-300 hover:bg-lime-400 hover:text-black transition"
+                type="button"
+                onClick={() => toggleService(item)}
+                className={`px-3 py-1 rounded-full border border-gray-600 text-xs transition ${selectedServices.includes(item)
+                  ? "bg-lime-400 text-black border-lime-400"
+                  : "text-gray-300 hover:bg-lime-400 hover:text-black"
+                  }`}
               >
                 {item}
               </button>
@@ -128,23 +166,35 @@ const ContactClient = () => {
             className="space-y-4"
           >
             <input
+              type="hidden"
+              name="services"
+              value={selectedServices.join(", ")}
+            />
+            <input
               type="text"
+              name="user_name"
               placeholder="Your Name"
+              required
               className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
             <input
               type="email"
+              name="user_email"
               placeholder="Email"
+              required
               className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
             <input
               type="text"
+              name="user_phone"
               placeholder="Phone"
               className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
             <textarea
               rows="3"
+              name="message"
               placeholder="Message"
+              required
               className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
 
@@ -156,12 +206,16 @@ const ContactClient = () => {
                 type="submit"
                 variant="contained"
                 fullWidth
+                disabled={isSubmitting}
                 sx={{
                   backgroundColor: "var(--color-lime-400)",
-                  color: "var(--color-black)"
+                  color: "var(--color-black)",
+                  "&.Mui-disabled": {
+                    backgroundColor: "rgba(163, 230, 53, 0.5)",
+                  },
                 }}
               >
-                Submit
+                {isSubmitting ? "Sending..." : "Submit"}
               </Button>
             </motion.div>
           </motion.form>
