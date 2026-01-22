@@ -6,18 +6,21 @@ import React from 'react';
 import useAxios from '../../../hooks/useAxios';
 import Image from 'next/image';
 import Skeleton from '../../../components/ui/Skeleton';
+import ErrorState from '../../../components/ui/ErrorState';
 
 const TeamDeatils = () => {
     const { id } = useParams();
     const axiosInstance = useAxios()
 
-    const { data: member = {}, isLoading } = useQuery({
+    const { data: member = {}, isLoading, isError, refetch } = useQuery({
         queryKey: ["team", id],
         queryFn: async () => {
             const res = await axiosInstance.get(`/admin/team/${id}`)
             return res.data?.member || {}
         }
     })
+
+    if (isError) return <div className='mx-2 ml-6 md:mx-20 my-10 md:my-28'><ErrorState onRetry={() => refetch()} message="Failed to load team member details." /></div>
 
     console.log(member)
     if (isLoading) {

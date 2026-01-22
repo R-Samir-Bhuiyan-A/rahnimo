@@ -5,13 +5,14 @@ import React from "react";
 import useAxios from "../../../hooks/useAxios";
 import { useParams } from "next/navigation";
 import Skeleton from "../../../components/ui/Skeleton";
+import ErrorState from "../../../components/ui/ErrorState";
 import { FaStar } from "react-icons/fa";
 
 const ProjectDetails = () => {
   const { id } = useParams();
   const axiosInstance = useAxios();
 
-  const { data: projectDetails = {}, isLoading } = useQuery({
+  const { data: projectDetails = {}, isLoading, isError, refetch } = useQuery({
     queryKey: ["projectDetails", id],
     queryFn: async () => {
       const res = await axiosInstance.get(`/admin/projects/${id}`);
@@ -20,6 +21,8 @@ const ProjectDetails = () => {
   });
 
   const project = projectDetails.project;
+
+  if (isError) return <section className="px-6 py-14 max-w-7xl mx-auto"><ErrorState onRetry={() => refetch()} message="Failed to load project details." /></section>;
 
   if (isLoading) {
     return (

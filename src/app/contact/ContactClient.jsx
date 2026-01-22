@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import Image from "next/image";
 import Button from "@mui/material/Button";
+import { Reveal } from "../../components/animations/Reveal";
 
 const ContactClient = () => {
   const formRef = useRef();
@@ -26,24 +27,30 @@ const ContactClient = () => {
           className="col-span-2 p-3 md:p-8 flex flex-col justify-between">
           <div className="flex flex-col gap-28">
             <div className="flex flex-col gap-5">
-              <Image
-                src="https://i.pravatar.cc/80"
-                width={200}
-                height={200}
-                alt="Image"
-                className="w-16 h-16 rounded-full"
-              />
-              <div>
-                <h3 className="font-semibold text-3xl">Andrew Hughes -</h3>
-                <p className="text-2xl mt-2 text-muted-foreground">
-                  Project Coordinator,<br /> can guide your project’s<br /> initial steps.
-                </p>
-              </div>
+              <Reveal>
+                <Image
+                  src="https://i.pravatar.cc/80"
+                  width={200}
+                  height={200}
+                  alt="Image"
+                  className="w-16 h-16 rounded-full"
+                />
+              </Reveal>
+              <Reveal delay={0.1}>
+                <div>
+                  <h3 className="font-semibold text-3xl">Andrew Hughes -</h3>
+                  <p className="text-2xl mt-2 text-muted-foreground">
+                    Project Coordinator,<br /> can guide your project’s<br /> initial steps.
+                  </p>
+                </div>
+              </Reveal>
             </div>
 
-            <h1 className="text-4xl md:text-7xl font-bold leading-tight">
-              Every project <br /> <span className="opacity-55">starts with a plan.</span>
-            </h1>
+            <Reveal delay={0.2}>
+              <h1 className="text-4xl md:text-7xl font-bold leading-tight">
+                Every project <br /> <span className="opacity-55">starts with a plan.</span>
+              </h1>
+            </Reveal>
           </div>
 
           <div className="flex gap-3 mt-6 text-foreground">
@@ -141,18 +148,22 @@ const ContactClient = () => {
               className="w-full bg-transparent border-b border-gray-600 focus:outline-none text-sm py-1 text-white placeholder:text-gray-500"
             />
 
-            <Button
-              type="submit"
-              variant="contained"
-              fullWidth
-              sx={{
-                backgroundColor: "var(--color-lime-400)",
-                color: "var(--color-black)"
-              }}
-            // className="bg-lime-400 text-black font-semibold text-sm px-6 py-2 rounded-md mt-4"
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Submit
-            </Button>
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{
+                  backgroundColor: "var(--color-lime-400)",
+                  color: "var(--color-black)"
+                }}
+              >
+                Submit
+              </Button>
+            </motion.div>
           </motion.form>
         </motion.div>
       </div>

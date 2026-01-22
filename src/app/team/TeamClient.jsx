@@ -3,18 +3,22 @@ import React from 'react';
 import { useQuery } from "@tanstack/react-query";
 import useAxios from '../../hooks/useAxios';
 import Skeleton from '../../components/ui/Skeleton';
+import ErrorState from '../../components/ui/ErrorState';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FadeInStagger, FadeInItem } from '../../components/animations/FadeInStagger';
 
 const TeamClient = () => {
     const axiosInstance = useAxios()
-    const { data: teams = [], isLoading, isError } = useQuery({
+    const { data: teams = [], isLoading, isError, refetch } = useQuery({
         queryKey: ["teams"],
         queryFn: async () => {
             const res = await axiosInstance.get('/admin/team')
             return Array.isArray(res.data) ? res.data : []
         },
     })
+
+    if (isError) return <div className='mt-10 px-5 md:px-20 py-14'><ErrorState onRetry={() => refetch()} message="Failed to load team members." /></div>
 
     if (isLoading) {
         return (
@@ -31,7 +35,7 @@ const TeamClient = () => {
     }
 
     return (
-        <div className='mt-10 px-5 md:px-20 py-14 grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-5 lg:gap-8'>
+        <FadeInStagger className='mt-10 px-5 md:px-20 py-14 grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-5 lg:gap-8'>
             {
                 teams.length === 0 && !isLoading && (
                     <p className="text-center text-gray-500">No team members found</p>
@@ -39,7 +43,7 @@ const TeamClient = () => {
             }
             {
                 Array.isArray(teams) && teams?.map(team => (
-                    <div
+                    <FadeInItem
                         key={team._id}
                         className='flex flex-col gap-2 md:gap-3'
                     >
@@ -79,10 +83,10 @@ const TeamClient = () => {
 
                             }
                         </h1>
-                    </div>
+                    </FadeInItem>
                 ))
             }
-        </div>
+        </FadeInStagger>
     );
 };
 

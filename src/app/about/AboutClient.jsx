@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Reveal } from "../../components/animations/Reveal";
 
 const AboutClient = () => {
   return (
@@ -37,29 +38,29 @@ const AboutClient = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-24 grid grid-cols-1 md:grid-cols-2 gap-16">
 
         {/* LEFT */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-10"
-        >
-          <div className="space-y-2">
-            <div className="w-20 h-[3px] bg-foreground" />
-            <h5 className="uppercase tracking-[0.25em] font-semibold text-sm text-muted-foreground">
-              About Studio Rahnimo
-            </h5>
-          </div>
+        <div className="space-y-10">
+          <Reveal>
+            <div className="space-y-2">
+              <div className="w-20 h-[3px] bg-foreground" />
+              <h5 className="uppercase tracking-[0.25em] font-semibold text-sm text-muted-foreground">
+                About Studio Rahnimo
+              </h5>
+            </div>
+          </Reveal>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            A multidisciplinary  <br className="hidden md:block" /> design practice.
-          </h2>
+          <Reveal delay={0.1}>
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+              A multidisciplinary  <br className="hidden md:block" /> design practice.
+            </h2>
+          </Reveal>
 
-          <p className="text-lg font-medium text-muted-foreground border-t border-border pt-6">
-            Rahnimo is built on clarity, craft, and culture.
-            We design for impact today, relevance tomorrow, and meaning that lasts.
-          </p>
-        </motion.div>
+          <Reveal delay={0.2}>
+            <p className="text-lg font-medium text-muted-foreground border-t border-border pt-6">
+              Rahnimo is built on clarity, craft, and culture.
+              We design for impact today, relevance tomorrow, and meaning that lasts.
+            </p>
+          </Reveal>
+        </div>
 
         {/* RIGHT */}
         <motion.div
