@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-3">Contact Us</h4>
             <p className="text-sm opacity-80">
-              email: eng.tuhin77@gmail.com <br />
+              email: support@rahnimo.com <br />
               mobile: +8801711111111
             </p>
           </div>
