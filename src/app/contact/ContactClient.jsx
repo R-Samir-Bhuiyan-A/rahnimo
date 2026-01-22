@@ -29,9 +29,9 @@ const ContactClient = () => {
             <div className="flex flex-col gap-5">
               <Reveal>
                 <Image
-                  src="https://i.pravatar.cc/80"
-                  width={200}
-                  height={200}
+                  src="/pointer.svg"
+                  width={250}
+                  height={250}
                   alt="Image"
                   className="w-16 h-16 rounded-full"
                 />
