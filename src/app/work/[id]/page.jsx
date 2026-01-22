@@ -1,11 +1,9 @@
-"use client";
-
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import React from "react";
 import useAxios from "../../../hooks/useAxios";
 import { useParams } from "next/navigation";
-import Spinner from "../../../components/ui/Spinner";
+import Skeleton from "../../../components/ui/Skeleton";
 import { FaStar } from "react-icons/fa";
 
 const ProjectDetails = () => {
@@ -22,7 +20,32 @@ const ProjectDetails = () => {
 
   const project = projectDetails.project;
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) {
+    return (
+      <section className="px-6 py-14 max-w-7xl mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* IMAGE */}
+          <Skeleton className="w-full h-[500px] rounded-2xl" />
+
+          {/* CONTENT */}
+          <div className="space-y-6">
+            <Skeleton className="w-32 h-8 rounded-full" />
+            <Skeleton className="w-3/4 h-12" />
+            <div className="space-y-3">
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-full h-4" />
+              <Skeleton className="w-2/3 h-4" />
+            </div>
+            <div className="space-y-2 pt-4">
+              <Skeleton className="w-1/2 h-6" />
+              <Skeleton className="w-1/2 h-6" />
+              <Skeleton className="w-1/2 h-6" />
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="px-6 py-14 max-w-7xl mx-auto ">

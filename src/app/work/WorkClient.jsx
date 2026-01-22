@@ -91,7 +91,7 @@
 import Image from "next/image";
 // import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import Spinner from "../../components/ui/Spinner";
+import Skeleton from "../../components/ui/Skeleton";
 import Link from "next/link";
 import useAxios from "../../hooks/useAxios";
 
@@ -119,7 +119,21 @@ const WorkClient = () => {
         },
     });
 
-    if (isLoading) return <Spinner />;
+    if (isLoading) {
+        return (
+            <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="space-y-3">
+                            <Skeleton className="w-full h-60 rounded-md" />
+                            <Skeleton className="w-1/4 h-4" />
+                            <Skeleton className="w-3/4 h-6" />
+                        </div>
+                    ))}
+                </div>
+            </section>
+        )
+    }
     if (isError) return <p className="text-center text-red-500">Failed to load projects.</p>;
 
     return (

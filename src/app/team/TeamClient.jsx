@@ -2,7 +2,7 @@
 import React from 'react';
 import { useQuery } from "@tanstack/react-query";
 import useAxios from '../../hooks/useAxios';
-import Spinner from '../../components/ui/Spinner';
+import Skeleton from '../../components/ui/Skeleton';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,7 +16,19 @@ const TeamClient = () => {
         },
     })
 
-    if (isLoading) return <Spinner />
+    if (isLoading) {
+        return (
+            <div className='mt-10 px-5 md:px-20 py-14 grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-5 lg:gap-8'>
+                {[...Array(4)].map((_, i) => (
+                    <div key={i} className='flex flex-col gap-2 md:gap-3'>
+                        <Skeleton className="w-full h-64 md:h-80 rounded-xl" />
+                        <Skeleton className="w-1/2 h-6" />
+                        <Skeleton className="w-1/3 h-6" />
+                    </div>
+                ))}
+            </div>
+        )
+    }
 
     return (
         <div className='mt-10 px-5 md:px-20 py-14 grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-5 lg:gap-8'>

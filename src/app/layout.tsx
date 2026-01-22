@@ -7,6 +7,7 @@ import Footer from "../components/layout/Footer"
 import ThemeProvider from "../wrapper/ThemeProvider"
 import LenisProvider from "../wrapper/LenisProvider"
 import QueryProvider from "../wrapper/QueryProvider"
+import TransitionProvider from "../wrapper/TransitionProvider"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -18,7 +19,7 @@ export const metadata = {
     default: "Rahnimo",
     template: "%s | Rahnimo",
   },
-  description: "Wellcome to interior Studio",
+  description: "Welcome to interior Studio",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -55,7 +56,9 @@ export default function RootLayout({
           <LenisProvider>
             <QueryProvider>
               <Navbar />
-              {children}
+              <TransitionProvider>
+                {children}
+              </TransitionProvider>
               <Footer />
             </QueryProvider>
           </LenisProvider>
