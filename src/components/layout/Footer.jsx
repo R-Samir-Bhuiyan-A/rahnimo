@@ -17,9 +17,15 @@ const Footer = () => {
           <div className="flex flex-col items-center sm:items-start">
             <Image src="/logo2.svg" width={80} height={80} alt="Logo" className="" />
             <div className="flex gap-4 mt-4">
-              <FaFacebook size={28} className="text-blue-500 cursor-pointer" />
-              <AiFillTwitterCircle size={30} className="text-[#1c9ae8] cursor-pointer" />
-              <FiInstagram size={28} className="text-[#ff3347] cursor-pointer" />
+              <a href="https://www.facebook.com/rahnimodesigns" target="_blank" rel="noopener noreferrer">
+                <FaFacebook size={28} className="text-blue-500 cursor-pointer" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <AiFillTwitterCircle size={30} className="text-[#1c9ae8] cursor-pointer" />
+              </a>
+              <a href="https://www.instagram.com/rahnimodesigns/" target="_blank" rel="noopener noreferrer">
+                <FiInstagram size={28} className="text-[#ff3347] cursor-pointer" />
+              </a>
             </div>
             <p className="mt-2 text-sm text-muted-foreground">Best price guarantee</p>
           </div>

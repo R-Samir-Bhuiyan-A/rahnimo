@@ -55,14 +55,14 @@ const ContactClient = () => {
 
           <div className="flex gap-3 mt-6 text-foreground">
             <a
-              href="#" target='_blank'
+              href="https://www.facebook.com/rahnimodesigns" target='_blank' rel="noopener noreferrer"
             >
               <FaFacebook
                 size={35}
               />
             </a>
             <a
-              href="#" target='_blank'
+              href="https://www.instagram.com/rahnimodesigns/" target='_blank' rel="noopener noreferrer"
             >
               <FaInstagramSquare
                 size={35}
@@ -70,14 +70,14 @@ const ContactClient = () => {
               />
             </a>
             <a
-              href="#" target='_blank'
+              href="#" target='_blank' rel="noopener noreferrer"
             >
               <FaLinkedin
                 size={35}
               />
             </a>
             <a
-              href="#" target='_blank'
+              href="#" target='_blank' rel="noopener noreferrer"
             >
               <AiFillTwitterCircle
                 size={35}
