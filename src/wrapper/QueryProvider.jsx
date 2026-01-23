@@ -7,7 +7,14 @@ import "aos/dist/aos.css";
 const ENABLE_LOADING_VIDEO = false; // 👈 toggle here
 
 const QueryProvider = ({ children }) => {
-  const queryClient = new QueryClient();
+  const [queryClient] = useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 0,
+        refetchOnWindowFocus: true,
+      },
+    },
+  }));
   const [closing, setClosing] = useState(false);
   const [hidden, setHidden] = useState(!ENABLE_LOADING_VIDEO);
 
