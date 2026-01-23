@@ -61,28 +61,30 @@ const TeamClient = () => {
                                 <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                         </Link>
-                        {/* <h1 className='font-bold text-xl tracking-widest font-montserrat text-foreground'>
+                        <h1 className='font-bold text-primary text-xl tracking-widest font-montserrat mt-4'>
                             {
-                                team?.designation
-                                    .trim()
-                                    .split(" ")
-                                    .map((word, index, arr) =>
-                                        index === arr.length - 1
-                                            ? word.toUpperCase()
-                                            : `${word.toUpperCase()}.`
-                                    )
-                                    .join(" ")
-                            }
-
-                        </h1> */}
-                        <h1 className='font-bold text-primary text-xl tracking-widest font-montserrat '>
-                            {
-                                team?.name
-                                    .split(" ")
-                                    .join(" ")
-
+                                team?.name && (
+                                    team.name
+                                        .split(" ")
+                                        .join(" ")
+                                )
                             }
                         </h1>
+                        <h2 className='font-semibold text-foreground/70 text-sm tracking-widest font-montserrat uppercase'>
+                            {
+                                (team?.designation || team?.role) && (
+                                    (team.designation || team.role)
+                                        .trim()
+                                        .split(" ")
+                                        .map((word, index, arr) =>
+                                            index === arr.length - 1
+                                                ? word.toUpperCase()
+                                                : `${word.toUpperCase()}.`
+                                        )
+                                        .join(" ")
+                                )
+                            }
+                        </h2>
                     </FadeInItem>
                 ))
             }
