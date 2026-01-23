@@ -99,13 +99,13 @@ const Navbar = () => {
                             }
 
                         </ul>
-                        <button
+                        {   /* <button
                             onClick={toggleTheme}
                             className="p-2 rounded-full hover:bg-muted transition-colors cursor-pointer"
                             aria-label="Toggle Dark Mode"
                         >
                             {theme === 'dark' ? <Sun size={20} className="text-foreground" /> : <Moon size={20} className="text-foreground" />}
-                        </button>
+                        </button> */}
                     </div>
                     {/* Right side: Static Menu Links */}
                     <div className='flex items-center md:hidden'>

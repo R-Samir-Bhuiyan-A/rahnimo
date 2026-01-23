@@ -43,7 +43,7 @@ const AboutClient = () => {
             <div className="space-y-2">
               <div className="w-20 h-[3px] bg-foreground" />
               <h5 className="uppercase tracking-[0.25em] font-semibold text-sm text-muted-foreground">
-                About Studio Rahnimo
+                About Rahnimo
               </h5>
             </div>
           </Reveal>
@@ -72,22 +72,30 @@ const AboutClient = () => {
         >
           <p>
             We believe every space, brand, and object carries a story. At Rahnimo, design is not decoration—it is strategy, emotion, and experience woven together.
-
-            We work across Interior Architecture, Furniture Design, Brand Identity, Graphic Design, and Digital Experiences, shaping environments and brands that feel intentional, timeless, and human.
           </p>
+
+          <p>We work across Interior Architecture, Furniture Design, Brand Identity, Graphic Design, and Digital Experiences, shaping environments and brands that feel intentional, timeless, and human.</p>
+
+
+          <h5 className="uppercase tracking-[0.25em] font-semibold text-sm text-foreground">
+            Our approach
+          </h5>
 
           <p>
             Our process begins with understanding—how a space is used, how a brand speaks, and how people move, feel, and connect. Beyond measurements, materials, and visuals, we study behavior, culture, and purpose.
           </p>
 
           <p className="border-t border-border pt-6">
-            Interior Architecture & Spatial Design
-            Custom Furniture Design
-            Brand Identity & Visual Systems
-            Graphic Design & Environmental Graphics
-            Website & Digital Design
-
-            Each project is treated as a complete narrative—where form, function, and identity align seamlessly.
+            <ul className="list-disc">
+              <li>Interior Architecture & Spatial Design</li>
+              <li>Custom Furniture Design</li>
+              <li>Brand Identity & Visual Systems</li>
+              <li>Graphic Design & Environmental Graphics</li>
+              <li>Website & Digital Design</li>
+            </ul>
+            <p className="pt-6">
+              Each project is treated as a complete narrative—where form, function, and identity align seamlessly.
+            </p>
           </p>
         </motion.div>
 
