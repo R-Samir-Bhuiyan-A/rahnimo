@@ -1,38 +1,12 @@
-"use client";
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import Image from 'next/image';
+import NewsletterForm from '../newsletter/NewsletterForm';
 
 
 const Footer = () => {
-  const formRef = useRef();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    emailjs
-      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, {
-        publicKey: 'YOUR_PUBLIC_KEY',
-      })
-      .then(
-        () => {
-          alert("Subscribed successfully!");
-          formRef.current.reset();
-        },
-        (error) => {
-          console.error("FAILED...", error.text);
-          alert("Failed to subscribe.");
-        }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
-      });
-  };
   return (
     <footer className="bg-secondary py-10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 text-secondary-foreground">
@@ -76,22 +50,7 @@ const Footer = () => {
           {/* Subscribe */}
           <div>
             <h4 className="font-semibold mb-3 text-foreground">Subscribe</h4>
-            <form ref={formRef} onSubmit={handleSubscribe} className="flex flex-col gap-3">
-              <input
-                type="email"
-                name="user_email"
-                required
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-              />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-600/50 text-white py-2 rounded transition-colors"
-              >
-                {isSubmitting ? "Subscribing..." : "Subscribe"}
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
 
         </div>

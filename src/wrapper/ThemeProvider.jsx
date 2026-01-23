@@ -2,7 +2,10 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
+
+// Option A: temporary force light-only mode
+const FORCE_LIGHT = true; // set to false to restore normal behavior
 
 export default function ThemeProvider({ children }) {
     const [theme, setTheme] = useState("system");
@@ -12,9 +15,7 @@ export default function ThemeProvider({ children }) {
     useEffect(() => {
         setMounted(true);
         const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            setTheme(savedTheme);
-        }
+        if (savedTheme) setTheme(savedTheme);
     }, []);
 
     // Apply theme to document
@@ -26,7 +27,10 @@ export default function ThemeProvider({ children }) {
 
         const applyTheme = () => {
             let effectiveTheme = theme;
-            if (theme === "system") {
+
+            if (FORCE_LIGHT) {
+                effectiveTheme = "light";
+            } else if (theme === "system") {
                 effectiveTheme = mediaQuery.matches ? "dark" : "light";
             }
 
@@ -41,11 +45,14 @@ export default function ThemeProvider({ children }) {
 
         applyTheme();
 
-        if (theme === "system") {
+        // Only listen to system changes when system mode is active AND not forced light
+        if (!FORCE_LIGHT && theme === "system") {
             mediaQuery.addEventListener("change", applyTheme);
         }
 
-        // Persist to localStorage
+        // Persist to localStorage (keep your original logic)
+        // Note: when FORCE_LIGHT=true, user changes don't visually apply, but we still store them
+        // so when you flip FORCE_LIGHT=false later, their preference is there.
         if (theme !== "system") {
             localStorage.setItem("theme", theme);
         } else {
@@ -53,7 +60,7 @@ export default function ThemeProvider({ children }) {
         }
 
         return () => {
-            if (theme === "system") {
+            if (!FORCE_LIGHT && theme === "system") {
                 mediaQuery.removeEventListener("change", applyTheme);
             }
         };
@@ -61,10 +68,6 @@ export default function ThemeProvider({ children }) {
 
     const toggleTheme = () => {
         setTheme((prev) => {
-            // cycle: light -> dark -> system -> light ... or just light <-> dark?
-            // User asked for "turn on off", implying a toggle. 
-            // Usually, simple toggle is better: if system/light -> dark, if dark -> light.
-
             let newTheme;
             if (prev === "system") {
                 const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -76,13 +79,8 @@ export default function ThemeProvider({ children }) {
         });
     };
 
-    // prevent hydration mismatch by not rendering theme-dependent children until mounted
-    // OR render them but accept they might flickr. 
-    // Better UX: render standard, let client patch it up. 
-    // But since we are using 'dark' class on HTML tag, we need to be careful.
-
     return (
-        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, mounted }}>
+        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, mounted, FORCE_LIGHT }}>
             {children}
         </ThemeContext.Provider>
     );
