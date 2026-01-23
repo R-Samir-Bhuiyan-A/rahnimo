@@ -82,13 +82,13 @@ const ProjectDetails = () => {
           </p>
 
           <p><strong>Location:</strong> {project?.location}</p>
-          <p><strong>Status:</strong> {project?.status}</p>
+          {/*  <p><strong>Status:</strong> {project?.status}</p>
           <p><strong>Design Style:</strong> {project?.designStyle}</p>
 
           <p>
             <strong>Completion Time:</strong>{" "}
             {project?.completionTime || "Ongoing"}
-          </p>
+          </p> */}
 
           <p><strong>Client Review:</strong> {project?.clientReview}</p>
 
