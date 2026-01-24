@@ -67,8 +67,8 @@ const Footer = () => {
         <div className="border-t border-border pt-4 text-center text-sm text-muted-foreground">
           © 2026 RAHNIMO. All rights reserved.
           <div className="mt-2 flex justify-center gap-4 text-xs">
-            <a href="#" className="hover:underline hover:text-primary transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:underline hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:underline hover:text-primary transition-colors">Terms & Conditions</a>
+            <a href="/privacy" className="hover:underline hover:text-primary transition-colors">Privacy Policy</a>
           </div>
         </div>
 

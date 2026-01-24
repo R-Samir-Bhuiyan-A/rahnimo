@@ -108,6 +108,11 @@ const ProjectDetails = () => {
                     {project?.completionTime || "Ongoing"}
                 </p> */}
 
+              <p>
+                <strong>Completion Time:</strong>{" "}
+                {project?.completionTime || "Ongoing"}
+              </p>
+
               <p><strong>Client Review:</strong> {project?.clientReview}</p>
             </div>
           </Reveal>

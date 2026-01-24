@@ -209,19 +209,22 @@ const FaqPage = () => {
 
             {/* Page Header */}
             <div className="mb-20 max-w-4xl relative">
-                <Reveal>
-                    <div className="space-y-6">
-                        <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-[0.2em]">
-                            Help Center
-                        </span>
-                        <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-tight">
-                            Common Questions
-                        </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                            Clear answers to your questions about our process, services, and approach.
-                        </p>
-                    </div>
-                </Reveal>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="space-y-6"
+                >
+                    <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-[0.2em]">
+                        Help Center
+                    </span>
+                    <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-tight">
+                        Common Questions
+                    </h1>
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+                        Clear answers to your questions about our process, services, and approach.
+                    </p>
+                </motion.div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
