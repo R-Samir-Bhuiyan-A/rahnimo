@@ -72,7 +72,7 @@ const TeamClient = () => {
     }
 
     return (
-        <section className="relative min-h-screen">
+        <section className="relative min-h-screen" itemScope itemType="https://schema.org/Organization">
             {/* Background Video */}
             <div className="fixed inset-0 pointer-events-none -z-20 overflow-hidden">
                 <video
@@ -90,6 +90,7 @@ const TeamClient = () => {
 
             {/* Masonry Layout */}
             <div className="mt-10 px-5 md:px-20 py-14">
+                <h2 className="sr-only">Our Interior Design Team Members</h2>
                 {teams.length === 0 && !isLoading ? (
                     <p className="text-center text-muted-foreground">No team members found</p>
                 ) : (

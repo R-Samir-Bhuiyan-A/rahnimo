@@ -54,7 +54,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <section className="px-6 py-14 max-w-7xl mx-auto ">
+    <section className="px-6 py-14 max-w-7xl mx-auto " itemScope itemType="https://schema.org/CreativeWork">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* IMAGE */}
         {/* IMAGE */}
@@ -81,13 +81,13 @@ const ProjectDetails = () => {
         <div className="space-y-4">
 
           <Reveal delay={0.1}>
-            <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-semibold">
+            <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-semibold" itemProp="genre">
               {project?.category}
             </span>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <h1 className="text-3xl md:text-4xl font-extrabold">
+            <h1 className="text-3xl md:text-4xl font-extrabold" itemProp="name">
               {project?.projectTitle}
             </h1>
           </Reveal>

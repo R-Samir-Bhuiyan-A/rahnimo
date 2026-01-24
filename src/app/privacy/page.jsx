@@ -41,7 +41,7 @@ export const metadata = {
 
 const PrivacyPage = () => {
     return (
-        <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto">
+        <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto" itemScope itemType="https://schema.org/CreativeWork">
             <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">Privacy Policy</h1>
             <p className="text-muted-foreground mb-12">Last updated: January 24, 2026</p>
 

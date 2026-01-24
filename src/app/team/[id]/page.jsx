@@ -109,7 +109,7 @@ const TeamDeatils = () => {
         )
     }
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen' itemScope itemType="https://schema.org/Person">
             {/* Profile Section - Wider Container */}
             <div className='max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 my-10 md:my-28'>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-24 mb-20 items-start'>
@@ -127,10 +127,10 @@ const TeamDeatils = () => {
                         </div>
 
                         <div>
-                            <h1 className='font-bold text-primary text-4xl md:text-5xl tracking-widest font-montserrat'>
+                            <h1 className='font-bold text-primary text-4xl md:text-5xl tracking-widest font-montserrat' itemProp="name">
                                 {member?.name}
                             </h1>
-                            <h2 className='font-semibold text-muted-foreground text-sm tracking-[0.25em] font-montserrat uppercase mt-3 pl-1'>
+                            <h2 className='font-semibold text-muted-foreground text-sm tracking-[0.25em] font-montserrat uppercase mt-3 pl-1' itemProp="jobTitle">
                                 {member?.designation || member?.role}
                             </h2>
                         </div>

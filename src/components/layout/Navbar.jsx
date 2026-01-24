@@ -60,7 +60,7 @@ const Navbar = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 0.2 }}
                                     className="rotate-180 [writing-mode:vertical-rl]
-                                    text-[18px] tracking-[0.4em] font-semibold text-foreground">
+                                    text-[18px] tracking-[0.4em] font-semibold text-[#8a8787]">
                                     THE ARCHITECTURE OF IMAGINATION
                                 </motion.p>
                             </div>

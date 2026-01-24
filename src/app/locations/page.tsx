@@ -45,10 +45,10 @@ export default function LocationsPage() {
   const serviceableCities = getAllServiceableCities();
 
   return (
-    <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto">
+    <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto" itemScope itemType="https://schema.org/AreaServed">
       <h1 className="sr-only">Interior Design Services in Bangladesh | Rahnimo Service Areas</h1>
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground" itemProp="name">
           Interior Design Services Across Bangladesh
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

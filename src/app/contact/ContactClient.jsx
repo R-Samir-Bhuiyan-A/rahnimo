@@ -46,7 +46,7 @@ const ContactClient = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#cee0da] to-[#fcfcfc] dark:from-background dark:to-muted text-foreground mx-5 md:mx-10 ml-5 md:ml-14 my-20 rounded-2xl shadow transition-all duration-300">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#cee0da] to-[#fcfcfc] dark:from-background dark:to-muted text-foreground mx-5 md:mx-10 ml-5 md:ml-14 my-20 rounded-2xl shadow transition-all duration-300" itemScope itemType="https://schema.org/ContactPage">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
         {/* Left Card */}
         <motion.div

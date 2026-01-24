@@ -145,7 +145,7 @@ export default function RootLayout({
                   <AICrawlingOptimizer />
                   <AIContentSuggestions />
                   <Navbar />
-                  <main>
+                  <main itemScope itemType="https://schema.org/WebPage">
                     <TransitionProvider>
                       {children}
                     </TransitionProvider>

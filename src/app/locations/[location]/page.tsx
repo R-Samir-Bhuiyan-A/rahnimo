@@ -65,9 +65,9 @@ export default function LocationPage({ params }: Params) {
   const location = decodeURIComponent(params.location).replace(/-/g, ' ');
 
   return (
-    <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto">
+    <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto" itemScope itemType="https://schema.org/Service">
       <h1 className="sr-only">Interior Design in {location}, Bangladesh | Rahnimo Studio</h1>
-      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground" itemProp="name">
         Interior Design in <span className="text-primary">{location}</span>, Bangladesh
       </h2>
 

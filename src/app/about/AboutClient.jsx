@@ -6,7 +6,7 @@ import { Reveal } from "../../components/animations/Reveal";
 
 const AboutClient = () => {
   return (
-    <section className="w-full bg-background text-foreground">
+    <section className="w-full bg-background text-foreground" itemScope itemType="https://schema.org/Organization">
 
       {/* HERO VIDEO */}
       <div className="relative overflow-hidden">
@@ -49,13 +49,13 @@ const AboutClient = () => {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight" itemProp="name">
               A multidisciplinary  <br className="hidden md:block" /> design practice.
             </h2>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="text-lg font-medium text-muted-foreground border-t border-border pt-6">
+            <p className="text-lg font-medium text-muted-foreground border-t border-border pt-6" itemProp="description">
               Rahnimo is built on clarity, craft, and culture.
               We design for impact today, relevance tomorrow, and meaning that lasts.
             </p>
@@ -70,7 +70,7 @@ const AboutClient = () => {
           transition={{ duration: 0.6 }}
           className="space-y-8 text-muted-foreground leading-relaxed"
         >
-          <p>
+          <p itemProp="description">
             We believe every space, brand, and object carries a story. At Rahnimo, design is not decoration—it is strategy, emotion, and experience woven together.
           </p>
 
@@ -81,11 +81,11 @@ const AboutClient = () => {
             Our approach
           </h5>
 
-          <p>
+          <p itemProp="description">
             Our process begins with understanding—how a space is used, how a brand speaks, and how people move, feel, and connect. Beyond measurements, materials, and visuals, we study behavior, culture, and purpose.
           </p>
 
-          <div>
+          <div itemProp="makesOffer">
             <ul className="list-disc ml-5 space-y-2">
               <li>Interior Architecture & Spatial Design</li>
               <li>Custom Furniture Design</li>

@@ -54,13 +54,14 @@ const WorkClient = () => {
     if (isError) return <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20"><ErrorState onRetry={() => refetch()} message="Failed to load projects." /></section>;
 
     return (
-        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
+        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20" itemScope itemType="https://schema.org/ItemList">
+            <h2 className="sr-only">Interior Design Projects Portfolio</h2>
             {/* GRID */}
             <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 {projects.map((item, index) => (
-                    <FadeInItem key={index}>
+                    <FadeInItem key={index} itemProp="itemListElement" itemScope itemType="https://schema.org/VisualArtwork">
                         <Link href={`/work/${item._id}`}>
-                            <div className="border-b-2 border-border pb-2 group">
+                            <div className="border-b-2 border-border pb-2 group" itemScope itemType="https://schema.org/CreativeWork">
                                 <div className="overflow-hidden rounded-md mb-2">
                                     <Image
                                         src={item.image}
@@ -73,11 +74,11 @@ const WorkClient = () => {
                                     />
                                 </div>
                                 <div>
-                                    <span className="text-xs uppercase tracking-widest text-primary font-semibold">
+                                    <span className="text-xs uppercase tracking-widest text-primary font-semibold" itemProp="genre">
                                         {item.category}
                                     </span>
 
-                                    <div className="text-lg font-bold text-foreground">
+                                    <div className="text-lg font-bold text-foreground" itemProp="name">
                                         {item.projectTitle}
                                     </div>
                                 </div>

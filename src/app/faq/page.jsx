@@ -177,7 +177,7 @@ const FaqPage = () => {
     );
 
     return (
-        <section className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1400px] mx-auto relative overflow-hidden">
+        <section className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1400px] mx-auto relative overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
             <h1 className="sr-only">Interior Design Questions Answered in Bangladesh | Rahnimo Studio FAQ</h1>
 
             {/* 1. Background Video */}
@@ -212,6 +212,7 @@ const FaqPage = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+                <h2 className="sr-only">Frequently Asked Questions</h2>
 
                 {/* LEFT SIDEBAR */}
                 <div className="lg:col-span-4 space-y-12">
