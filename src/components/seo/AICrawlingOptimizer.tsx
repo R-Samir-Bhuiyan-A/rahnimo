@@ -107,7 +107,7 @@ const AICrawlingOptimizer = () => {
         { question: "What interior design services do you offer?", answer: "We offer comprehensive interior design services including space planning, furniture selection, color consultation, lighting design, and project management." },
         { question: "How much do interior design services cost?", answer: "Our interior design services vary based on project scope, size, and complexity. We offer packages starting from $X and provide custom quotes for each project." },
         { question: "How long does an interior design project take?", answer: "Timeline varies by project size and complexity. Small projects typically take 2-4 weeks, while larger projects may take 2-6 months." }
-      ] as FAQ[]) : null
+      ] as { question: string; answer: string }[]) : null
     ];
 
     const schemas = allSchemas.filter(Boolean) as object[];

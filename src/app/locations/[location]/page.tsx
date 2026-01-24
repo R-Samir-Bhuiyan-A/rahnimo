@@ -8,7 +8,8 @@ interface Params {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const location = decodeURIComponent(params.location).replace(/-/g, ' ');
+  const locationParam = params.location;
+  const location = decodeURIComponent(locationParam).replace(/-/g, ' ');
 
   return {
     title: `Interior Design in ${location}, Bangladesh | Rahnimo Studio`,
@@ -31,10 +32,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: `Interior Design in ${location}, Bangladesh | Rahnimo Studio`,
       description: `Professional interior design services in ${location}, Bangladesh. Transform your space with Rahnimo's award-winning design solutions.`,
       type: 'website',
-      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://rahnimo.com'}/locations/${params.location}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://rahnimo.com'}/locations/${locationParam}`,
       images: [
         {
-          url: `/og-${params.location}.jpg`,
+          url: `/og-${locationParam}.jpg`,
           width: 1200,
           height: 630,
           alt: `Interior Design in ${location}, Bangladesh - Rahnimo Studio`,
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       description: `Transform your space with our award-winning design solutions in ${location}, Bangladesh.`,
     },
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://rahnimo.com'}/locations/${params.location}`,
+      canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://rahnimo.com'}/locations/${locationParam}`,
     },
   };
 }
