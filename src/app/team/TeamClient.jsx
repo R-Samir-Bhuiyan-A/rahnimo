@@ -8,6 +8,41 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FadeInStagger, FadeInItem } from '../../components/animations/FadeInStagger';
 
+const TeamCard = ({ team }) => {
+    return (
+        <FadeInItem className="break-inside-avoid mb-6">
+            <div
+                className="flex flex-col gap-3 group"
+            >
+                <Link href={`/team/${team._id}`}>
+                    <div className="relative w-full rounded-2xl overflow-hidden bg-muted">
+                        {/* Main Image */}
+                        <Image
+                            src={team?.image || '/placeholder.jpg'}
+                            width={500}
+                            height={600}
+                            alt={team.name}
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+
+                        {/* Subtle Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    </div>
+                </Link>
+
+                <div className="space-y-1 px-1">
+                    <h1 className='font-bold text-primary text-lg tracking-wider font-montserrat'>
+                        {team?.name}
+                    </h1>
+                    <h2 className='font-medium text-muted-foreground text-xs tracking-widest uppercase'>
+                        {team?.designation}
+                    </h2>
+                </div>
+            </div>
+        </FadeInItem>
+    );
+};
+
 const TeamClient = () => {
     const axiosInstance = useAxios()
     const { data: teams = [], isLoading, isError, refetch } = useQuery({
@@ -22,12 +57,12 @@ const TeamClient = () => {
 
     if (isLoading) {
         return (
-            <div className='mt-10 px-5 md:px-20 py-14 grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-5 lg:gap-8'>
-                {[...Array(4)].map((_, i) => (
-                    <div key={i} className='flex flex-col gap-2 md:gap-3'>
-                        <Skeleton className="w-full h-64 md:h-80 rounded-xl" />
+            <div className='mt-10 px-5 md:px-20 py-14 columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6'>
+                {[...Array(6)].map((_, i) => (
+                    <div key={i} className='break-inside-avoid flex flex-col gap-3'>
+                        <Skeleton className={`w-full rounded-2xl ${i % 2 === 0 ? 'h-96' : 'h-64'}`} />
                         <Skeleton className="w-1/2 h-6" />
-                        <Skeleton className="w-1/3 h-6" />
+                        <Skeleton className="w-1/3 h-4" />
                     </div>
                 ))}
             </div>
@@ -44,68 +79,25 @@ const TeamClient = () => {
                     muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px]"
-                    style={{ filter: "grayscale(20%)" }} // Optional aesthetic touch
+                    style={{ filter: "grayscale(20%)" }}
                 >
                     <source src="/team.mp4" type="video/mp4" />
                 </video>
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-background/70" />
             </div>
 
-            <FadeInStagger className='mt-10 px-5 md:px-20 py-14 grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-5 lg:gap-8'>
-                {
-                    teams.length === 0 && !isLoading && (
-                        <p className="text-center text-gray-500 col-span-full">No team members found</p>
-                    )
-                }
-                {
-                    Array.isArray(teams) && teams?.map(team => (
-                        <FadeInItem
-                            key={team._id}
-                            className='flex flex-col gap-2 md:gap-3'
-                        >
-                            <Link href={`/team/${team._id}`}>
-                                <div className="relative w-full h-full group overflow-hidden rounded-xl">
-                                    <Image
-                                        src={team?.image}
-                                        width={200}
-                                        height={200}
-                                        alt="image"
-                                        className="w-full h-full object-cover"
-                                    />
-
-                                    {/* Blue hover overlay */}
-                                    <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                </div>
-                            </Link>
-                            <h1 className='font-bold text-primary text-xl tracking-widest font-montserrat mt-4'>
-                                {
-                                    team?.name && (
-                                        team.name
-                                            .split(" ")
-                                            .join(" ")
-                                    )
-                                }
-                            </h1>
-                            <h2 className='font-semibold text-foreground/70 text-sm tracking-widest font-montserrat uppercase'>
-                                {
-                                    team?.designation && (
-                                        team.designation
-                                            .trim()
-                                            .split(" ")
-                                            .map((word, index, arr) =>
-                                                index === arr.length - 1
-                                                    ? word.toUpperCase()
-                                                    : `${word.toUpperCase()}.`
-                                            )
-                                            .join(" ")
-                                    )
-                                }
-                            </h2>
-                        </FadeInItem>
-                    ))
-                }
-            </FadeInStagger>
+            {/* Masonry Layout */}
+            <div className="mt-10 px-5 md:px-20 py-14">
+                {teams.length === 0 && !isLoading ? (
+                    <p className="text-center text-muted-foreground">No team members found</p>
+                ) : (
+                    <FadeInStagger className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                        {teams.map(team => (
+                            <TeamCard key={team._id} team={team} />
+                        ))}
+                    </FadeInStagger>
+                )}
+            </div>
         </section>
     );
 };
