@@ -122,3 +122,29 @@ body {
   /* Default border color */
   cursor: url("/pointer.svg") 31 41, auto;
 }
+
+:root {
+  --cursor-default: url("/pointer.svg") 0 0, auto;
+  --cursor-pointer: url("/mouse.svg") 0 0, pointer;
+}
+
+/* default */
+body {
+  cursor: var(--cursor-default);
+}
+
+/* clickable + React common cases */
+a,
+button,
+[role="button"],
+input,
+select,
+summary,
+label,
+textarea,
+option,
+[onclick],
+[data-clickable],
+.cursor-pointer {
+  cursor: var(--cursor-pointer);
+}
