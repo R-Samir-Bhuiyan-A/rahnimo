@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const location = decodeURIComponent(locationParam).replace(/-/g, ' ');
 
   return {
-    title: `Interior Design in ${location}, Bangladesh | Rahnimo Studio`,
+    title: `Interior Design ${location}, Bangladesh | Rahnimo Studio`,
     description: `Professional interior design services in ${location}, Bangladesh. Transform your space with Rahnimo's award-winning design solutions tailored to ${location}'s unique style and requirements.`,
     keywords: [
       `interior design ${location} Bangladesh`,
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       `${location} interior design`
     ],
     openGraph: {
-      title: `Interior Design in ${location}, Bangladesh | Rahnimo Studio`,
+      title: `Interior Design ${location}, Bangladesh | Rahnimo Studio`,
       description: `Professional interior design services in ${location}, Bangladesh. Transform your space with Rahnimo's award-winning design solutions.`,
       type: 'website',
       url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://rahnimo.com'}/locations/${locationParam}`,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Interior Design in ${location}, Bangladesh | Rahnimo Studio`,
+      title: `Interior Design ${location}, Bangladesh | Rahnimo Studio`,
       description: `Transform your space with our award-winning design solutions in ${location}, Bangladesh.`,
     },
     alternates: {

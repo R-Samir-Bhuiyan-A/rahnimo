@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Privacy Policy | Rahnimo Interior Design Studio Bangladesh",
+  title: "Privacy Policy | Rahnimo Interior Design Bangladesh",
   description: "Rahnimo's privacy policy outlining how we collect, use, and protect your personal information when you use our interior design services in Bangladesh and website.",
   keywords: [
     "privacy policy Bangladesh",
@@ -16,7 +16,7 @@ export const metadata = {
     "privacy notice Bangladesh"
   ],
   openGraph: {
-    title: "Privacy Policy | Rahnimo Interior Design Studio Bangladesh",
+    title: "Privacy Policy | Rahnimo Interior Design Bangladesh",
     description: "Rahnimo's privacy policy outlining how we collect, use, and protect your personal information when you use our interior design services in Bangladesh and website.",
     type: "website",
     url: "https://rahnimo.com/privacy",
@@ -31,7 +31,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | Rahnimo Interior Design Studio Bangladesh",
+    title: "Privacy Policy | Rahnimo Interior Design Bangladesh",
     description: "Learn how we collect, use, and protect your personal information in Bangladesh.",
   },
   alternates: {

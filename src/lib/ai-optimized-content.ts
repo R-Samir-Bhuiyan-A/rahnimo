@@ -4,7 +4,7 @@
 export const aiOptimizedContent = {
   // Homepage content optimization
   home: {
-    title: "Affordable Interior Design Ideas in Bangladesh | Rahnimo Studio",
+    title: "Affordable Interior Design in Bangladesh | Rahnimo Studio",
     description: "Transform your space with Rahnimo's affordable interior design ideas and expert tips in Bangladesh. Discover budget-friendly solutions and creative inspiration.",
     keywords: [
       "affordable interior design ideas Bangladesh",
@@ -32,7 +32,7 @@ export const aiOptimizedContent = {
 
   // About page optimization
   about: {
-    title: "Professional Interior Design Team in Bangladesh | Rahnimo Studio",
+    title: "Interior Design Team Bangladesh | Rahnimo Studio",
     description: "Meet our professional interior design team in Bangladesh. Learn about our expertise, design philosophy, and commitment to creating beautiful, functional spaces.",
     keywords: [
       "interior design team professionals Bangladesh",
@@ -60,7 +60,7 @@ export const aiOptimizedContent = {
 
   // Work/Portfolio page optimization
   work: {
-    title: "Interior Design Portfolio in Bangladesh | Rahnimo Studio Projects",
+    title: "Interior Design Portfolio Bangladesh | Rahnimo Studio",
     description: "Explore our interior design portfolio featuring completed projects across Bangladesh. See our work in residential and commercial spaces with before and after transformations.",
     keywords: [
       "interior design portfolio Bangladesh",
@@ -88,7 +88,7 @@ export const aiOptimizedContent = {
 
   // Contact page optimization
   contact: {
-    title: "Interior Design Consultation in Bangladesh | Book with Rahnimo Studio",
+    title: "Interior Design Consultation Bangladesh | Rahnimo Studio",
     description: "Book your interior design consultation in Bangladesh. Request a quote, schedule an appointment, or inquire about our design services for your space.",
     keywords: [
       "interior design consultation booking Bangladesh",
@@ -116,7 +116,7 @@ export const aiOptimizedContent = {
 
   // FAQ page optimization
   faq: {
-    title: "Interior Design Questions Answered in Bangladesh | Rahnimo Studio FAQ",
+    title: "Interior Design FAQ Bangladesh | Rahnimo Studio",
     description: "Find answers to frequently asked questions about our interior design services, process, pricing, and timeline in Bangladesh.",
     keywords: [
       "interior design frequently asked questions Bangladesh",
@@ -144,7 +144,7 @@ export const aiOptimizedContent = {
 
   // Team page optimization
   team: {
-    title: "Interior Design Professionals in Bangladesh | Rahnimo Creative Team",
+    title: "Interior Design Professionals Bangladesh | Rahnimo Team",
     description: "Meet our team of interior design professionals in Bangladesh. Learn about their expertise, specializations, and design approaches in creating beautiful spaces.",
     keywords: [
       "interior design professionals team Bangladesh",

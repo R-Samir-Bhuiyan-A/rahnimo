@@ -70,9 +70,9 @@ const Projects = () => {
                     {item.category}
                   </span>
 
-                  <h3 className="text-lg font-bold text-foreground">
+                  <div className="text-lg font-bold text-foreground">
                     {item.projectTitle}
-                  </h3>
+                  </div>
                 </div>
               </div>
             </Link>

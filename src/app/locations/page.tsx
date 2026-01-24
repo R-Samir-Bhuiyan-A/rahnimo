@@ -2,7 +2,7 @@ import { getAllServiceableCities } from '@/lib/geo-utils';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Interior Design Services in Bangladesh | Rahnimo Service Areas",
+  title: "Interior Design Bangladesh | Service Areas | Rahnimo",
   description: "Explore all cities in Bangladesh where Rahnimo provides premium interior design services. Find design solutions in your city across Bangladesh.",
   keywords: [
     "interior design Bangladesh",
@@ -18,7 +18,7 @@ export const metadata = {
     "Sylhet interior design"
   ],
   openGraph: {
-    title: "Interior Design Services in Bangladesh | Rahnimo Service Areas",
+    title: "Interior Design Bangladesh | Service Areas | Rahnimo",
     description: "Explore all cities in Bangladesh where Rahnimo provides premium interior design services. Find design solutions in your city across Bangladesh.",
     type: "website",
     url: "https://rahnimo.com/locations",
@@ -33,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Interior Design Services in Bangladesh | Rahnimo Service Areas",
+    title: "Interior Design Bangladesh | Service Areas | Rahnimo",
     description: "Explore all cities in Bangladesh where Rahnimo provides premium interior design services.",
   },
   alternates: {

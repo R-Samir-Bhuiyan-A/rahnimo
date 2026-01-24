@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Interior Design Questions Answered in Bangladesh | Rahnimo Studio FAQ",
+  title: "Interior Design FAQ Bangladesh | Rahnimo Studio",
   description: "Find answers to frequently asked questions about our interior design services, process, pricing, and timeline in Bangladesh. Get insights into working with our design team.",
   keywords: [
     "interior design frequently asked questions Bangladesh",
@@ -14,7 +14,7 @@ export const metadata = {
     "working with interior designer FAQ Bangladesh"
   ],
   openGraph: {
-    title: "Interior Design Questions Answered in Bangladesh | Rahnimo Studio FAQ",
+    title: "Interior Design FAQ Bangladesh | Rahnimo Studio",
     description: "Find answers to frequently asked questions about our interior design services, process, pricing, and timeline in Bangladesh. Get insights into working with our design team.",
     type: "website",
     url: "https://rahnimo.com/faq",
@@ -29,7 +29,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Interior Design Questions Answered in Bangladesh | Rahnimo Studio FAQ",
+    title: "Interior Design FAQ Bangladesh | Rahnimo Studio",
     description: "Find answers to frequently asked questions about our interior design services in Bangladesh.",
   },
   alternates: {

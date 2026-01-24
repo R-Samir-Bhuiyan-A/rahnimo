@@ -60,7 +60,7 @@ const Navbar = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 0.2 }}
                                     className="rotate-180 [writing-mode:vertical-rl]
-                                    text-[18px] tracking-[0.4em] font-semibold text-grey">
+                                    text-[18px] tracking-[0.4em] font-semibold text-foreground">
                                     THE ARCHITECTURE OF IMAGINATION
                                 </motion.p>
                             </div>
@@ -68,28 +68,29 @@ const Navbar = () => {
                     </Link>
 
                     <div className="hidden lg:flex items-center gap-6">
-                        <ul className="flex gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-muted-foreground">
+                        <ul className="flex gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-foreground">
                             {
                                 rightMenuItems.map((item, i) => {
                                     const isActive = pathname === item.url
 
                                     return (
-                                        <Link
-                                            key={i}
-                                            href={item.url}
-                                            className={`relative font-bold hover:opacity-70 pb-1
-                                            ${isActive ? "text-foreground" : ""}
-                                            `}
-                                        >
-                                            {item.urlName}
-
-                                            {/* underline */}
-                                            <span
-                                                className={`absolute left-0 -bottom-1 h-1 bg-blue-700 transition-all duration-300
-                                                ${isActive ? "w-full" : "w-0"}
+                                        <li key={i}>
+                                            <Link
+                                                href={item.url}
+                                                className={`relative font-bold hover:opacity-70 pb-1
+                                                ${isActive ? "text-foreground" : ""}
                                                 `}
-                                            ></span>
-                                        </Link>
+                                            >
+                                                {item.urlName}
+
+                                                {/* underline */}
+                                                <span
+                                                    className={`absolute left-0 -bottom-1 h-1 bg-blue-700 transition-all duration-300
+                                                    ${isActive ? "w-full" : "w-0"}
+                                                    `}
+                                                ></span>
+                                            </Link>
+                                        </li>
                                     )
 
                                 })
@@ -116,27 +117,28 @@ const Navbar = () => {
                 {
                     isOpen && (
                         <div className='md:hidden bg-background px-4 pt-2 pb-4 space-y-2 shadow-md border-b border-border'>
-                            <ul className="flex flex-col items-end gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-muted-foreground">
+                            <ul className="flex flex-col items-end gap-10 text-[12px] uppercase tracking-[0.2em] font-extrabold text-foreground">
                                 {
                                     rightMenuItems.map((item, i) => {
                                         const isActive = pathname === item.url
 
                                         return (
-                                            <Link
-                                                key={i}
-                                                href={item.url}
-                                                className={`relative font-bold hover:opacity-70 pb-1
-                                                ${isActive ? "text-foreground" : ""}`}
-                                            >
-                                                {item.urlName}
+                                            <li key={i}>
+                                                <Link
+                                                    href={item.url}
+                                                    className={`relative font-bold hover:opacity-70 pb-1
+                                                    ${isActive ? "text-foreground" : ""}`}
+                                                >
+                                                    {item.urlName}
 
-                                                {/* underline */}
-                                                <span
-                                                    className={`absolute left-0 -bottom-1 h-1 bg-blue-700 transition-all duration-300
-                                                ${isActive ? "w-full" : "w-0"}
-                                                `}
-                                                ></span>
-                                            </Link>
+                                                    {/* underline */}
+                                                    <span
+                                                        className={`absolute left-0 -bottom-1 h-1 bg-blue-700 transition-all duration-300
+                                                    ${isActive ? "w-full" : "w-0"}
+                                                    `}
+                                                    ></span>
+                                                </Link>
+                                            </li>
                                         )
                                     })
                                 }

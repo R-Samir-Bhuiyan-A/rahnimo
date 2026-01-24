@@ -33,12 +33,12 @@ const TeamCard = ({ team, index }) => {
                 </Link>
 
                 <div className="space-y-1 px-1">
-                    <h1 className='font-bold text-primary text-lg tracking-wider font-montserrat'>
+                    <div className='font-bold text-primary text-lg tracking-wider font-montserrat'>
                         {team?.name}
-                    </h1>
-                    <h2 className='font-medium text-muted-foreground text-xs tracking-widest uppercase'>
+                    </div>
+                    <div className='font-medium text-muted-foreground text-xs tracking-widest uppercase'>
                         {team?.designation}
-                    </h2>
+                    </div>
                 </div>
             </div>
         </FadeInItem>

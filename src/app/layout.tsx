@@ -21,8 +21,8 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rahnimo.com'),
   title: {
-    default: "Rahnimo | Premium Interior Design Studio in Bangladesh | Transform Your Space",
-    template: "%s | Rahnimo Interior Design Studio in Bangladesh",
+    default: "Rahnimo | Premium Interior Design Studio Bangladesh",
+    template: "%s | Rahnimo Interior Design Bangladesh",
   },
   description: "Rahnimo is a premium interior design studio in Bangladesh specializing in luxury residential and commercial spaces. Our award-winning designers create stunning, functional environments.",
   keywords: [
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rahnimo.com",
-    title: "Rahnimo | Premium Interior Design Studio in Bangladesh | Transform Your Space",
+    title: "Rahnimo | Premium Interior Design Studio Bangladesh",
     description: "Rahnimo is a premium interior design studio in Bangladesh specializing in luxury residential and commercial spaces. Our award-winning designers create stunning, functional environments.",
     siteName: "Rahnimo Interior Design Studio in Bangladesh",
     images: [
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahnimo | Premium Interior Design Studio in Bangladesh",
+    title: "Rahnimo | Premium Interior Design Studio Bangladesh",
     description: "Transform your space with our award-winning interior design services in Bangladesh.",
     images: ["/og-image.jpg"], // You should create an optimized Twitter image
     creator: "@rahnimodesign",

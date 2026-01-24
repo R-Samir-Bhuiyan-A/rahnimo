@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Terms & Conditions | Rahnimo Interior Design Studio Bangladesh",
+  title: "Terms & Conditions | Rahnimo Interior Design Bangladesh",
   description: "Terms and conditions governing the use of Rahnimo's interior design services in Bangladesh and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
   keywords: [
     "terms and conditions Bangladesh",
@@ -16,7 +16,7 @@ export const metadata = {
     "contract terms Bangladesh"
   ],
   openGraph: {
-    title: "Terms & Conditions | Rahnimo Interior Design Studio Bangladesh",
+    title: "Terms & Conditions | Rahnimo Interior Design Bangladesh",
     description: "Terms and conditions governing the use of Rahnimo's interior design services in Bangladesh and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
     type: "website",
     url: "https://rahnimo.com/terms",
@@ -31,7 +31,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms & Conditions | Rahnimo Interior Design Studio Bangladesh",
+    title: "Terms & Conditions | Rahnimo Interior Design Bangladesh",
     description: "Read our policies on service agreements, intellectual property, and user responsibilities in Bangladesh.",
   },
   alternates: {

@@ -92,9 +92,9 @@ const Projects = () => {
                   {item.category}
                 </span>
 
-                <h3 className="text-lg font-bold leading-snug line-clamp-2">
+                <div className="text-lg font-bold leading-snug line-clamp-2">
                   {item.projectTitle}
-                </h3>
+                </div>
 
                 <p className="text-sm text-gray-500 line-clamp-2">
                   {item.location || "Premium Interior & Architecture Project"}
