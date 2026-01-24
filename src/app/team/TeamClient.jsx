@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FadeInStagger, FadeInItem } from '../../components/animations/FadeInStagger';
 
-const TeamCard = ({ team }) => {
+const TeamCard = ({ team, index }) => {
     return (
         <FadeInItem className="break-inside-avoid mb-6">
             <div
@@ -22,6 +22,8 @@ const TeamCard = ({ team }) => {
                             width={500}
                             height={600}
                             alt={team.name}
+                            loading={index < 2 ? "eager" : "lazy"} // Load first 2 team images eagerly
+                            fetchPriority={index < 2 ? "high" : "auto"} // Prioritize first 2 team images
                             className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                         />
 
@@ -92,8 +94,8 @@ const TeamClient = () => {
                     <p className="text-center text-muted-foreground">No team members found</p>
                 ) : (
                     <FadeInStagger className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-                        {teams.map(team => (
-                            <TeamCard key={team._id} team={team} />
+                        {teams.map((team, index) => (
+                            <TeamCard key={team._id} team={team} index={index} />
                         ))}
                     </FadeInStagger>
                 )}

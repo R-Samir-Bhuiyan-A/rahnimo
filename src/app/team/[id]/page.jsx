@@ -13,7 +13,7 @@ import remarkBreaks from 'remark-breaks';
 import { FadeInStagger, FadeInItem } from '../../../components/animations/FadeInStagger';
 import { useInView } from 'framer-motion';
 
-const GalleryItem = ({ src }) => {
+const GalleryItem = ({ src, index }) => {
     const containerRef = useRef(null);
     const videoRef = useRef(null);
     const isVideo = src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm');
@@ -58,7 +58,8 @@ const GalleryItem = ({ src }) => {
                         height={500}
                         alt="Gallery Item"
                         className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                        loading='lazy'
+                        loading={index < 2 ? "eager" : "lazy"} // Load first 2 gallery images eagerly
+                        fetchPriority={index < 2 ? "high" : "auto"} // Prioritize first 2 gallery images
                     />
                 )}
                 {/* Subtle Hover Overlay */}
@@ -121,6 +122,7 @@ const TeamDeatils = () => {
                                 alt={member?.name || "Team Member"}
                                 className="w-full h-auto object-cover"
                                 priority
+                                fetchPriority="high"
                             />
                         </div>
 
@@ -170,8 +172,8 @@ const TeamDeatils = () => {
                         </div>
 
                         <FadeInStagger className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-                            {member.gallery.map((item, index) => (
-                                <GalleryItem key={index} src={item} />
+                            {member.gallery.map((item, idx) => (
+                                <GalleryItem key={idx} src={item} index={idx} />
                             ))}
                         </FadeInStagger>
                     </div>

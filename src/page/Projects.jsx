@@ -50,7 +50,7 @@ const Projects = () => {
 
       {/* GRID */}
       <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 space-y-5">
-        {filteredProjects.map((item) => (
+        {filteredProjects.map((item, index) => (
           <FadeInItem key={item._id}>
             <Link href={`/work/${item._id}`}>
               <div className="border-b-2 border-border pb-2 group">
@@ -60,7 +60,8 @@ const Projects = () => {
                     alt={item.projectTitle}
                     width={200}
                     height={200}
-                    loading="lazy"
+                    loading={index < 3 ? "eager" : "lazy"} // Load first 3 images eagerly
+                    fetchPriority={index < 3 ? "high" : "auto"} // Prioritize first 3 images
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

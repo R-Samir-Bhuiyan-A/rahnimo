@@ -57,8 +57,8 @@ const WorkClient = () => {
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
             {/* GRID */}
             <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                {projects.map((item, i) => (
-                    <FadeInItem key={i}>
+                {projects.map((item, index) => (
+                    <FadeInItem key={index}>
                         <Link href={`/work/${item._id}`}>
                             <div className="border-b-2 border-border pb-2 group">
                                 <div className="overflow-hidden rounded-md mb-2">
@@ -67,7 +67,8 @@ const WorkClient = () => {
                                         alt={item.projectTitle}
                                         width={200}
                                         height={200}
-                                        loading="lazy"
+                                        loading={index < 3 ? "eager" : "lazy"} // Load first 3 images eagerly
+                                        fetchPriority={index < 3 ? "high" : "auto"} // Prioritize first 3 images
                                         className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>

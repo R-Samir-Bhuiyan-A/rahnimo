@@ -71,6 +71,7 @@ const ProjectDetails = () => {
               height={520}
               alt={project?.projectTitle || "Project Image"}
               loading="eager"
+              fetchPriority="high"
               className="rounded-xl object-contain w-full h-full"
             />
           </motion.div>
@@ -146,14 +147,15 @@ const ProjectDetails = () => {
 
       <div className="grid mt-10 grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
         {
-          project?.galleryImages && project?.galleryImages.map((img, index) => (
-            <Reveal key={`${project._id}-${index}`} delay={index * 0.1}>
+          project?.galleryImages && project?.galleryImages.map((img, idx) => (
+            <Reveal key={`${project._id}-${idx}`} delay={idx * 0.1}>
               <Image
                 src={img}
                 width={200}
                 height={200}
                 alt="gallery image"
-                loading="lazy"
+                loading={idx < 2 ? "eager" : "lazy"} // Load first 2 gallery images eagerly
+                fetchPriority={idx < 2 ? "high" : "auto"} // Prioritize first 2 gallery images
                 className="w-full h-full object-contain"
               />
             </Reveal>

@@ -1,9 +1,9 @@
 "use client";
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import useAxios from '../../hooks/useAxios';
-import { Reveal } from '../../components/animations/Reveal';
 import Skeleton from '../../components/ui/Skeleton';
 import ErrorState from '../../components/ui/ErrorState';
 import { IoIosArrowDown } from "react-icons/io";
@@ -31,6 +31,7 @@ const CATEGORY_ICONS = {
 };
 
 // --- Did You Know Component ---
+
 const FACTS = [
     "Good design increases business conversion by up to 200%.",
     "We use sustainable materials in 80% of our physical projects.",
@@ -51,7 +52,7 @@ const DidYouKnowWidget = () => {
 
     return (
         <div className="bg-secondary/30 border border-border rounded-xl p-6 relative overflow-hidden group">
-            <div className="absolute -right-4 -top-4 opacity-10 rotate-12 transition-transform group-hover:rotate-45 duration-700">
+            <div className="absolute -right-4 -top-4 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-700">
                 <Lightbulb size={120} />
             </div>
 
@@ -92,11 +93,7 @@ const DidYouKnowWidget = () => {
 // --- FAQ Item Component ---
 const FaqItem = ({ question, answer, isOpen, toggle }) => {
     return (
-        <motion.div
-            layout
-            // Interactive Hover Effect
-            whileHover={{ x: 4 }}
-            transition={{ duration: 0.2 }}
+        <div
             className={`group border-b border-border/50 mb-4 ${isOpen ? 'pb-6' : ''}`}
         >
             <button
@@ -105,40 +102,31 @@ const FaqItem = ({ question, answer, isOpen, toggle }) => {
             >
                 <div className="flex items-center gap-4">
                     {/* Subtle Bullet Decoration */}
-                    <motion.div
-                        animate={{ scale: isOpen ? 1 : 0.8, opacity: isOpen ? 1 : 0.3 }}
-                        className={`w-1.5 h-1.5 rounded-full ${isOpen ? 'bg-primary' : 'bg-foreground'}`}
+                    <div
+                        className={`w-1.5 h-1.5 rounded-full transition-transform ${isOpen ? 'scale-100 opacity-100 bg-primary' : 'scale-80 opacity-30 bg-foreground'}`}
                     />
                     <span className={`text-lg md:text-xl font-medium pr-8 transition-colors duration-300 leading-relaxed ${isOpen ? 'text-primary' : 'text-foreground'}`}>
                         {question}
                     </span>
                 </div>
 
-                <motion.span
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={`mt-1 flex-shrink-0 transition-colors ${isOpen ? 'text-primary' : 'text-muted-foreground group-hover:text-foreground'}`}
+                <span
+                    className={`mt-1 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : 'text-muted-foreground group-hover:text-foreground'}`}
                 >
                     <IoIosArrowDown size={20} />
-                </motion.span>
+                </span>
             </button>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden pl-6 md:pl-8"
-                    >
-                        <div
-                            className="pt-2 pl-2 text-muted-foreground leading-loose prose prose-sm md:prose-base dark:prose-invert max-w-none [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:mb-4 [&_h1]:mt-6 [&_h1]:text-foreground [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mb-3 [&_h2]:mt-5 [&_h2]:text-foreground [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-10 [&_ol]:list-decimal [&_ol]:pl-10 [&_a]:text-primary [&_a]:underline"
-                            dangerouslySetInnerHTML={{ __html: answer }}
-                        />
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.div>
+            {isOpen && (
+                <div
+                    className="overflow-hidden pl-6 md:pl-8 transition-all duration-300"
+                >
+                    <div
+                        className="pt-2 pl-2 text-muted-foreground leading-loose prose prose-sm md:prose-base dark:prose-invert max-w-none [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:mb-4 [&_h1]:mt-6 [&_h1]:text-foreground [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mb-3 [&_h2]:mt-5 [&_h2]:text-foreground [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-10 [&_ol]:list-decimal [&_ol]:pl-10 [&_a]:text-primary [&_a]:underline"
+                        dangerouslySetInnerHTML={{ __html: answer }}
+                    />
+                </div>
+            )}
+        </div>
     );
 };
 
@@ -209,12 +197,7 @@ const FaqPage = () => {
 
             {/* Page Header */}
             <div className="mb-20 max-w-4xl relative">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="space-y-6"
-                >
+                <div className="space-y-6">
                     <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-[0.2em]">
                         Help Center
                     </span>
@@ -224,7 +207,7 @@ const FaqPage = () => {
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
                         Clear answers to your questions about our process, services, and approach.
                     </p>
-                </motion.div>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
@@ -313,18 +296,17 @@ const FaqPage = () => {
                                 </div>
                             ))
                         ) : filteredFaqs.length > 0 ? (
-                            <motion.div layout className="space-y-0">
+                            <div className="space-y-0">
                                 {filteredFaqs.map((faq, index) => (
-                                    <Reveal key={faq._id} delay={index * 0.05} width="100%">
-                                        <FaqItem
-                                            question={faq.question}
-                                            answer={faq.answer}
-                                            isOpen={openIndex === faq._id}
-                                            toggle={() => toggleFaq(faq._id)}
-                                        />
-                                    </Reveal>
+                                    <FaqItem
+                                        key={faq._id}
+                                        question={faq.question}
+                                        answer={faq.answer}
+                                        isOpen={openIndex === faq._id}
+                                        toggle={() => toggleFaq(faq._id)}
+                                    />
                                 ))}
-                            </motion.div>
+                            </div>
                         ) : (
                             <div className="py-20 text-center">
                                 <p className="text-xl text-muted-foreground">No questions found matching your search.</p>

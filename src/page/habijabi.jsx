@@ -62,11 +62,11 @@ const Projects = () => {
 
       {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {filteredProjects.map((item, i) => (
+        {filteredProjects.map((item, index) => (
           <Link href={`/work/${item._id}`} key={item._id}>
             <motion.article
               data-aos="flip-left"
-              custom={i}
+              custom={index}
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
@@ -81,6 +81,8 @@ const Projects = () => {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  loading={index < 3 ? "eager" : "lazy"} // Load first 3 images eagerly
+                  fetchPriority={index < 3 ? "high" : "auto"} // Prioritize first 3 images
                 />
               </div>
 

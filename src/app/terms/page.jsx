@@ -1,8 +1,42 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'Terms & Conditions | Rahnimo',
-    description: 'Terms and conditions for using Rahnimo services.',
+  title: "Terms & Conditions | Rahnimo Interior Design Studio",
+  description: "Terms and conditions governing the use of Rahnimo's interior design services and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
+  keywords: [
+    "terms and conditions",
+    "service agreement",
+    "interior design terms",
+    "user agreement",
+    "design contract",
+    "intellectual property",
+    "service terms",
+    "legal terms",
+    "design studio terms",
+    "contract terms"
+  ],
+  openGraph: {
+    title: "Terms & Conditions | Rahnimo Interior Design Studio",
+    description: "Terms and conditions governing the use of Rahnimo's interior design services and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
+    type: "website",
+    url: "https://rahnimo.com/terms",
+    images: [
+      {
+        url: "/og-terms.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Terms & Conditions - Rahnimo Interior Design Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions | Rahnimo Interior Design Studio",
+    description: "Read our policies on service agreements, intellectual property, and user responsibilities.",
+  },
+  alternates: {
+    canonical: "https://rahnimo.com/terms",
+  },
 };
 
 const TermsPage = () => {

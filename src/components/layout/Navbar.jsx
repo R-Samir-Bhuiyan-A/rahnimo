@@ -8,7 +8,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { usePathname } from 'next/navigation';
 import { useTheme } from '../../wrapper/ThemeProvider';
 import { useAnimation } from '../../context/AnimationContext';
-import { Sun, Moon } from 'lucide-react';
 
 
 const rightMenuItems = [
@@ -50,7 +49,7 @@ const Navbar = () => {
                                     src="/logo2.svg"
                                     width={80}
                                     height={80}
-                                    alt='Logo'
+                                    alt='Rahnimo Logo'
                                     className="mt-0 md:mt-6 h-10 md:h-20 object-contain invert brightness-0"
                                 />
                             </motion.div>
@@ -60,8 +59,8 @@ const Navbar = () => {
                                     initial={animationsEnabled ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: 0.2 }}
-                                    className="rotate-180 [writing-mode:vertical-rl] 
-                                    text-[18px] tracking-[0.4em] font-semibold text-gray-400">
+                                    className="rotate-180 [writing-mode:vertical-rl]
+                                    text-[18px] tracking-[0.4em] font-semibold text-grey">
                                     THE ARCHITECTURE OF IMAGINATION
                                 </motion.p>
                             </div>
@@ -97,20 +96,14 @@ const Navbar = () => {
                             }
 
                         </ul>
-                        {   /* <button
-                            onClick={toggleTheme}
-                            className="p-2 rounded-full hover:bg-muted transition-colors cursor-pointer"
-                            aria-label="Toggle Dark Mode"
-                        >
-                            {theme === 'dark' ? <Sun size={20} className="text-foreground" /> : <Moon size={20} className="text-foreground" />}
-                        </button> */}
                     </div>
-                    {/* Right side: Static Menu Links */}
+                    {/* Right side: Static Menu Links - Mobile Only */}
                     <div className='flex items-center md:hidden'>
-                        <button onClick={toggleTheme} className="mr-4 p-2 rounded-full hover:bg-muted transition-colors cursor-pointer">
-                            {theme === 'dark' ? <Sun size={20} className="text-foreground" /> : <Moon size={20} className="text-foreground" />}
-                        </button>
-                        <button onClick={toggleMenu} className="cursor-pointer">
+                        <button
+                            onClick={toggleMenu}
+                            className="cursor-pointer"
+                            aria-label={isOpen ? "Close menu" : "Open menu"}
+                        >
                             {
                                 isOpen
                                     ? (<CloseIcon className="text-foreground" />)
