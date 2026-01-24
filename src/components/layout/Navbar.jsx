@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { usePathname } from 'next/navigation';
 import { useTheme } from '../../wrapper/ThemeProvider';
+import { useAnimation } from '../../context/AnimationContext';
 import { Sun, Moon } from 'lucide-react';
 
 
@@ -14,7 +15,8 @@ const rightMenuItems = [
     { urlName: "About", url: "/about" },
     { urlName: "Work", url: "/work" },
     { urlName: "Team", url: "/team" },
-    { urlName: "Contact", url: "/contact" }
+    { urlName: "Contact", url: "/contact" },
+    { urlName: "FAQ", url: "/faq" }
 ];
 
 
@@ -23,15 +25,7 @@ const Navbar = () => {
     const toggleMenu = () => setIsOpen(!isOpen)
     const pathname = usePathname()
     const { theme, toggleTheme, mounted } = useTheme();
-
-    // Prevent hydration mismatch for icon
-    // Prevent hydration mismatch for icon
-    // if (!mounted) return null; // Removed to prevent FOUC
-    // Or return a skeleton navbar? No, returning null for the whole navbar is bad for SEO/LCP.
-    // Better: Render the navbar but keep the toggle icon static or hidden until mounted.
-    // Actually, since we're using "use client", we can just wait for mount to show the specific icon or use a generic one.
-    // But returning null for the WHOLE component is bad.
-    // Let's just return the navbar and handle the icon safely.
+    const { animationsEnabled } = useAnimation();
 
     return (
         <>
@@ -61,11 +55,15 @@ const Navbar = () => {
                                 />
                             </motion.div>
                             {/* 🔥 Vertical Text */}
-                            <div className="absolute left-2 top-60 h-auto flex items-center">
-                                <p className="rotate-180 [writing-mode:vertical-rl] 
-                                    text-xs tracking-[0.4em] font-semibold text-gray-400">
+                            <div className="absolute left-2 top-68 h-auto flex items-center">
+                                <motion.p
+                                    initial={animationsEnabled ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    className="rotate-180 [writing-mode:vertical-rl] 
+                                    text-[18px] tracking-[0.4em] font-semibold text-gray-400">
                                     THE ARCHITECTURE OF IMAGINATION
-                                </p>
+                                </motion.p>
                             </div>
                         </div>
                     </Link>
@@ -120,7 +118,7 @@ const Navbar = () => {
                             }
                         </button>
                     </div>
-                </div>
+                </div >
                 {/* Mobile Menu */}
                 {
                     isOpen && (
@@ -152,8 +150,9 @@ const Navbar = () => {
 
                             </ul>
                         </div>
-                    )}
-            </nav>
+                    )
+                }
+            </nav >
         </>
     );
 };

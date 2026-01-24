@@ -120,5 +120,5 @@ body {
   scrollbar-width: none;
   border-color: var(--border);
   /* Default border color */
-  cursor: url("/pointer.svg") 40 31, auto;
+  cursor: url("/pointer.svg") 31 41, auto;
 }

@@ -85,18 +85,18 @@ const AboutClient = () => {
             Our process begins with understanding—how a space is used, how a brand speaks, and how people move, feel, and connect. Beyond measurements, materials, and visuals, we study behavior, culture, and purpose.
           </p>
 
-          <p className="border-t border-border pt-6">
-            <ul className="list-disc">
+          <div>
+            <ul className="list-disc ml-5 space-y-2">
               <li>Interior Architecture & Spatial Design</li>
               <li>Custom Furniture Design</li>
               <li>Brand Identity & Visual Systems</li>
               <li>Graphic Design & Environmental Graphics</li>
               <li>Website & Digital Design</li>
             </ul>
-            <p className="pt-6">
+            <p className="pt-6 border-b border-border">
               Each project is treated as a complete narrative—where form, function, and identity align seamlessly.
             </p>
-          </p>
+          </div>
         </motion.div>
 
       </div>

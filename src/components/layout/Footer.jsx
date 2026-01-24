@@ -4,6 +4,7 @@ import { FiInstagram } from "react-icons/fi";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import Image from 'next/image';
 import NewsletterForm from '../newsletter/NewsletterForm';
+import { Reveal } from '../animations/Reveal';
 
 
 const Footer = () => {
@@ -15,49 +16,60 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8 text-center sm:text-left">
 
           {/* Logo & Social */}
-          <div className="flex flex-col items-center sm:items-start">
-            <Image src="/logo2.svg" width={80} height={80} alt="Logo" className="" />
-            <div className="flex gap-4 mt-4">
-              <a href="https://www.facebook.com/rahnimodesigns" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={28} className="text-blue-500 cursor-pointer" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <AiFillTwitterCircle size={30} className="text-[#1c9ae8] cursor-pointer" />
-              </a>
-              <a href="https://www.instagram.com/rahnimodesigns/" target="_blank" rel="noopener noreferrer">
-                <FiInstagram size={28} className="text-[#ff3347] cursor-pointer" />
-              </a>
+          <Reveal delay={0.1}>
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="flex items-center gap-4">
+                <Image src="/logo2.svg" width={120} height={120} alt="Logo" className="" />
+                <Image
+                  src="/BEST PRICS SVG.svg"
+                  width={140}
+                  height={140}
+                  alt="Best Price Guarantee"
+                  className="w-[100px]"
+                />
+              </div>
             </div>
-            {/* <p className="mt-2 text-sm text-muted-foreground">Best price guarantee</p> */}
-            <Image
-              src="/BEST PRICS SVG.svg"
-              width={100}
-              height={100}
-              alt="Best Price Guarantee"
-              className="mt-2 sm:w-[30%] w-[50%]"
-            />
-          </div>
+          </Reveal>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-semibold mb-3 text-foreground">Contact Us</h4>
-            <p className="text-sm text-muted-foreground">
-              Email: rahnimodesigns@gmail.com <br />
-              Mobile: +8801976761030
-            </p>
-          </div>
+          <Reveal delay={0.2}>
+            <div>
+              <h4 className="font-semibold mb-3 text-foreground">Contact Us</h4>
+              <p className="text-sm text-muted-foreground">
+                Email: rahnimodesigns@gmail.com <br />
+                Mobile: +8801976761030
+              </p>
+            </div>
+          </Reveal>
 
           {/* Subscribe */}
-          <div>
-            <h4 className="font-semibold mb-3 text-foreground">Subscribe</h4>
-            <NewsletterForm />
-          </div>
+          <Reveal delay={0.3}>
+            <div>
+              <h4 className="font-semibold mb-3 text-foreground">Subscribe</h4>
+              <NewsletterForm />
+              <div className="flex gap-4 mt-6 justify-center">
+                <a href="https://www.facebook.com/rahnimodesigns" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook size={28} className="text-blue-500 cursor-pointer hover:scale-110 hover:text-blue-600 transition-all duration-300" />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <AiFillTwitterCircle size={30} className="text-[#1c9ae8] cursor-pointer hover:scale-110 hover:text-[#1689d0] transition-all duration-300" />
+                </a>
+                <a href="https://www.instagram.com/rahnimodesigns/" target="_blank" rel="noopener noreferrer">
+                  <FiInstagram size={28} className="text-[#ff3347] cursor-pointer hover:scale-110 hover:text-[#e02e3f] transition-all duration-300" />
+                </a>
+              </div>
+            </div>
+          </Reveal>
 
         </div>
 
         {/* Copyright */}
         <div className="border-t border-border pt-4 text-center text-sm text-muted-foreground">
           © 2026 RAHNIMO. All rights reserved.
+          <div className="mt-2 flex justify-center gap-4 text-xs">
+            <a href="#" className="hover:underline hover:text-primary transition-colors">Terms & Conditions</a>
+            <a href="#" className="hover:underline hover:text-primary transition-colors">Privacy Policy</a>
+          </div>
         </div>
 
       </div>

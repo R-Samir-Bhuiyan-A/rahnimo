@@ -44,8 +44,8 @@ const NewsletterForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <div className="relative">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+            <div className="relative flex-1">
                 <input
                     type="email"
                     value={email}
@@ -53,14 +53,14 @@ const NewsletterForm = () => {
                     placeholder="Enter your email"
                     required
                     disabled={status === 'loading'}
-                    className="w-full px-4 py-2 rounded bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all disabled:opacity-50"
+                    className="w-full px-6 py-3 rounded bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all disabled:opacity-50"
                 />
             </div>
 
             <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-primary hover:bg-primary/90 disabled:bg-primary/50 text-primary-foreground py-2 rounded transition-colors font-medium relative"
+                className="w-full sm:w-auto bg-primary hover:bg-primary/90 disabled:bg-primary/50 text-primary-foreground px-6 py-3 rounded transition-colors font-medium relative whitespace-nowrap"
             >
                 {status === 'loading' ? (
                     <span className="flex items-center justify-center gap-2">

@@ -8,6 +8,7 @@ import ThemeProvider from "../wrapper/ThemeProvider"
 import LenisProvider from "../wrapper/LenisProvider"
 import QueryProvider from "../wrapper/QueryProvider"
 import TransitionProvider from "../wrapper/TransitionProvider"
+import { AnimationProvider } from "../context/AnimationContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -53,15 +54,17 @@ export default function RootLayout({
           `}
         </Script>
         <ThemeProvider>
-          <LenisProvider>
-            <QueryProvider>
-              <Navbar />
-              <TransitionProvider>
-                {children}
-              </TransitionProvider>
-              <Footer />
-            </QueryProvider>
-          </LenisProvider>
+          <AnimationProvider>
+            <LenisProvider>
+              <QueryProvider>
+                <Navbar />
+                <TransitionProvider>
+                  {children}
+                </TransitionProvider>
+                <Footer />
+              </QueryProvider>
+            </LenisProvider>
+          </AnimationProvider>
         </ThemeProvider>
       </body>
     </html>
