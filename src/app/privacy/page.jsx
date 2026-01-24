@@ -1,23 +1,23 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Privacy Policy | Rahnimo Interior Design Studio",
-  description: "Rahnimo's privacy policy outlining how we collect, use, and protect your personal information when you use our interior design services and website.",
+  title: "Privacy Policy | Rahnimo Interior Design Studio Bangladesh",
+  description: "Rahnimo's privacy policy outlining how we collect, use, and protect your personal information when you use our interior design services in Bangladesh and website.",
   keywords: [
-    "privacy policy",
-    "data protection",
-    "information collection",
-    "user privacy",
-    "interior design privacy",
-    "data security",
-    "personal information",
-    "cookie policy",
-    "gdpr compliance",
-    "privacy notice"
+    "privacy policy Bangladesh",
+    "data protection Bangladesh",
+    "information collection Bangladesh",
+    "user privacy Bangladesh",
+    "interior design privacy Bangladesh",
+    "data security Bangladesh",
+    "personal information Bangladesh",
+    "cookie policy Bangladesh",
+    "gdpr compliance Bangladesh",
+    "privacy notice Bangladesh"
   ],
   openGraph: {
-    title: "Privacy Policy | Rahnimo Interior Design Studio",
-    description: "Rahnimo's privacy policy outlining how we collect, use, and protect your personal information when you use our interior design services and website.",
+    title: "Privacy Policy | Rahnimo Interior Design Studio Bangladesh",
+    description: "Rahnimo's privacy policy outlining how we collect, use, and protect your personal information when you use our interior design services in Bangladesh and website.",
     type: "website",
     url: "https://rahnimo.com/privacy",
     images: [
@@ -25,14 +25,14 @@ export const metadata = {
         url: "/og-privacy.jpg",
         width: 1200,
         height: 630,
-        alt: "Privacy Policy - Rahnimo Interior Design Studio",
+        alt: "Privacy Policy - Rahnimo Interior Design Studio Bangladesh",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | Rahnimo Interior Design Studio",
-    description: "Learn how we collect, use, and protect your personal information.",
+    title: "Privacy Policy | Rahnimo Interior Design Studio Bangladesh",
+    description: "Learn how we collect, use, and protect your personal information in Bangladesh.",
   },
   alternates: {
     canonical: "https://rahnimo.com/privacy",

@@ -5,7 +5,7 @@ export const aiOptimizedContent = {
   // Homepage content optimization
   home: {
     title: "Affordable Interior Design Ideas in Bangladesh | Rahnimo Studio",
-    description: "Discover affordable interior design ideas and expert tips from Rahnimo Studio in Bangladesh. Transform your space with our budget-friendly design solutions and creative inspiration.",
+    description: "Transform your space with Rahnimo's affordable interior design ideas and expert tips in Bangladesh. Discover budget-friendly solutions and creative inspiration.",
     keywords: [
       "affordable interior design ideas Bangladesh",
       "budget interior design solutions Bangladesh",
@@ -33,7 +33,7 @@ export const aiOptimizedContent = {
   // About page optimization
   about: {
     title: "Professional Interior Design Team in Bangladesh | Rahnimo Studio",
-    description: "Meet our professional interior design team at Rahnimo Studio in Bangladesh. Learn about our expertise, design philosophy, and commitment to creating beautiful, functional spaces across Bangladesh.",
+    description: "Meet our professional interior design team in Bangladesh. Learn about our expertise, design philosophy, and commitment to creating beautiful, functional spaces.",
     keywords: [
       "interior design team professionals Bangladesh",
       "professional interior designers Bangladesh",
@@ -61,7 +61,7 @@ export const aiOptimizedContent = {
   // Work/Portfolio page optimization
   work: {
     title: "Interior Design Portfolio in Bangladesh | Rahnimo Studio Projects",
-    description: "Explore our interior design portfolio featuring completed projects from Rahnimo Studio across Bangladesh. See our work in residential and commercial spaces with before and after transformations.",
+    description: "Explore our interior design portfolio featuring completed projects across Bangladesh. See our work in residential and commercial spaces with before and after transformations.",
     keywords: [
       "interior design portfolio Bangladesh",
       "interior design case studies Bangladesh",
@@ -89,7 +89,7 @@ export const aiOptimizedContent = {
   // Contact page optimization
   contact: {
     title: "Interior Design Consultation in Bangladesh | Book with Rahnimo Studio",
-    description: "Book your interior design consultation with Rahnimo Studio in Bangladesh. Request a quote, schedule an appointment, or inquire about our design services for your space.",
+    description: "Book your interior design consultation in Bangladesh. Request a quote, schedule an appointment, or inquire about our design services for your space.",
     keywords: [
       "interior design consultation booking Bangladesh",
       "book interior design appointment Bangladesh",
@@ -117,7 +117,7 @@ export const aiOptimizedContent = {
   // FAQ page optimization
   faq: {
     title: "Interior Design Questions Answered in Bangladesh | Rahnimo Studio FAQ",
-    description: "Find answers to frequently asked questions about our interior design services, process, pricing, and timeline in Bangladesh. Get insights into working with our design team.",
+    description: "Find answers to frequently asked questions about our interior design services, process, pricing, and timeline in Bangladesh.",
     keywords: [
       "interior design frequently asked questions Bangladesh",
       "interior design process questions Bangladesh",
@@ -145,7 +145,7 @@ export const aiOptimizedContent = {
   // Team page optimization
   team: {
     title: "Interior Design Professionals in Bangladesh | Rahnimo Creative Team",
-    description: "Meet our team of interior design professionals at Rahnimo Studio in Bangladesh. Learn about their expertise, specializations, and design approaches in creating beautiful spaces across Bangladesh.",
+    description: "Meet our team of interior design professionals in Bangladesh. Learn about their expertise, specializations, and design approaches in creating beautiful spaces.",
     keywords: [
       "interior design professionals team Bangladesh",
       "interior design creative team Bangladesh",

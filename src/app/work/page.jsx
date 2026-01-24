@@ -6,11 +6,11 @@ const pageData = getPageContent('work');
 
 export const metadata = {
   title: pageData.title,
-  description: pageData.description,
+  description: "Explore our interior design portfolio featuring completed projects across Bangladesh. See our work in residential and commercial spaces with before and after transformations.",
   keywords: pageData.keywords,
   openGraph: {
     title: pageData.title,
-    description: pageData.description,
+    description: "Explore our interior design portfolio featuring completed projects across Bangladesh. See our work in residential and commercial spaces with before and after transformations.",
     type: "website",
     url: "https://rahnimo.com/work",
     images: [
@@ -25,7 +25,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: pageData.title,
-    description: pageData.description,
+    description: "Explore our interior design portfolio in Bangladesh.",
   },
   alternates: {
     canonical: "https://rahnimo.com/work",
@@ -33,7 +33,12 @@ export const metadata = {
 };
 
 const Work = () => {
-    return <WorkClient />
+    return (
+        <>
+            <h1 className="sr-only">Interior Design Portfolio in Bangladesh | Rahnimo Studio Projects</h1>
+            <WorkClient />
+        </>
+    )
 };
 
 export default Work;

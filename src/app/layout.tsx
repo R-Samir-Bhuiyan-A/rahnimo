@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: "Rahnimo | Premium Interior Design Studio in Bangladesh | Transform Your Space",
     template: "%s | Rahnimo Interior Design Studio in Bangladesh",
   },
-  description: "Rahnimo is a premium interior design studio specializing in luxury residential and commercial spaces across Bangladesh. Our award-winning designers create stunning, functional environments tailored to your unique vision and lifestyle.",
+  description: "Rahnimo is a premium interior design studio in Bangladesh specializing in luxury residential and commercial spaces. Our award-winning designers create stunning, functional environments.",
   keywords: [
     "interior design Bangladesh",
     "interior designer Bangladesh",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://rahnimo.com",
     title: "Rahnimo | Premium Interior Design Studio in Bangladesh | Transform Your Space",
-    description: "Rahnimo is a premium interior design studio specializing in luxury residential and commercial spaces across Bangladesh. Our award-winning designers create stunning, functional environments tailored to your unique vision and lifestyle.",
+    description: "Rahnimo is a premium interior design studio in Bangladesh specializing in luxury residential and commercial spaces. Our award-winning designers create stunning, functional environments.",
     siteName: "Rahnimo Interior Design Studio in Bangladesh",
     images: [
       {
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rahnimo | Premium Interior Design Studio in Bangladesh",
-    description: "Transform your space with our award-winning interior design services in Bangladesh. Luxury residential and commercial design solutions.",
+    description: "Transform your space with our award-winning interior design services in Bangladesh.",
     images: ["/og-image.jpg"], // You should create an optimized Twitter image
     creator: "@rahnimodesign",
   },

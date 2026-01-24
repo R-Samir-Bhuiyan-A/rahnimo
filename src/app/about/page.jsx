@@ -6,11 +6,11 @@ const pageData = getPageContent('about');
 
 export const metadata = {
   title: pageData.title,
-  description: pageData.description,
+  description: "Meet our professional interior design team in Bangladesh. Learn about our expertise, design philosophy, and commitment to creating beautiful, functional spaces.",
   keywords: pageData.keywords,
   openGraph: {
     title: pageData.title,
-    description: pageData.description,
+    description: "Meet our professional interior design team in Bangladesh. Learn about our expertise, design philosophy, and commitment to creating beautiful, functional spaces.",
     type: "website",
     url: "https://rahnimo.com/about",
     images: [
@@ -25,7 +25,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: pageData.title,
-    description: pageData.description,
+    description: "Meet our professional interior design team in Bangladesh.",
   },
   alternates: {
     canonical: "https://rahnimo.com/about",
@@ -33,7 +33,12 @@ export const metadata = {
 };
 
 const About = () => {
-    return <AboutClient />
+    return (
+        <>
+            <h1 className="sr-only">Professional Interior Design Team in Bangladesh | Rahnimo Studio</h1>
+            <AboutClient />
+        </>
+    )
 };
 
 export default About;

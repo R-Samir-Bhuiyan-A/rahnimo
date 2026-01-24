@@ -66,9 +66,10 @@ export default function LocationPage({ params }: Params) {
 
   return (
     <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto">
-      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+      <h1 className="sr-only">Interior Design in {location}, Bangladesh | Rahnimo Studio</h1>
+      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
         Interior Design in <span className="text-primary">{location}</span>, Bangladesh
-      </h1>
+      </h2>
 
       <p className="text-xl text-muted-foreground mb-12">
         Transform your space with Rahnimo's award-winning interior design services in {location}, Bangladesh.

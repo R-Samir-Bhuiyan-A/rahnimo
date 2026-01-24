@@ -1,23 +1,23 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Terms & Conditions | Rahnimo Interior Design Studio",
-  description: "Terms and conditions governing the use of Rahnimo's interior design services and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
+  title: "Terms & Conditions | Rahnimo Interior Design Studio Bangladesh",
+  description: "Terms and conditions governing the use of Rahnimo's interior design services in Bangladesh and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
   keywords: [
-    "terms and conditions",
-    "service agreement",
-    "interior design terms",
-    "user agreement",
-    "design contract",
-    "intellectual property",
-    "service terms",
-    "legal terms",
-    "design studio terms",
-    "contract terms"
+    "terms and conditions Bangladesh",
+    "service agreement Bangladesh",
+    "interior design terms Bangladesh",
+    "user agreement Bangladesh",
+    "design contract Bangladesh",
+    "intellectual property Bangladesh",
+    "service terms Bangladesh",
+    "legal terms Bangladesh",
+    "design studio terms Bangladesh",
+    "contract terms Bangladesh"
   ],
   openGraph: {
-    title: "Terms & Conditions | Rahnimo Interior Design Studio",
-    description: "Terms and conditions governing the use of Rahnimo's interior design services and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
+    title: "Terms & Conditions | Rahnimo Interior Design Studio Bangladesh",
+    description: "Terms and conditions governing the use of Rahnimo's interior design services in Bangladesh and website. Read our policies on service agreements, intellectual property, and user responsibilities.",
     type: "website",
     url: "https://rahnimo.com/terms",
     images: [
@@ -25,14 +25,14 @@ export const metadata = {
         url: "/og-terms.jpg",
         width: 1200,
         height: 630,
-        alt: "Terms & Conditions - Rahnimo Interior Design Studio",
+        alt: "Terms & Conditions - Rahnimo Interior Design Studio Bangladesh",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms & Conditions | Rahnimo Interior Design Studio",
-    description: "Read our policies on service agreements, intellectual property, and user responsibilities.",
+    title: "Terms & Conditions | Rahnimo Interior Design Studio Bangladesh",
+    description: "Read our policies on service agreements, intellectual property, and user responsibilities in Bangladesh.",
   },
   alternates: {
     canonical: "https://rahnimo.com/terms",

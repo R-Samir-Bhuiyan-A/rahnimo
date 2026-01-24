@@ -178,6 +178,7 @@ const FaqPage = () => {
 
     return (
         <section className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1400px] mx-auto relative overflow-hidden">
+            <h1 className="sr-only">Interior Design Questions Answered in Bangladesh | Rahnimo Studio FAQ</h1>
 
             {/* 1. Background Video */}
             <div className="fixed inset-0 pointer-events-none -z-20 overflow-hidden">

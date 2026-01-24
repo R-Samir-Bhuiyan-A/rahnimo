@@ -5,11 +5,11 @@ const pageData = getPageContent('home');
 
 export const metadata = {
   title: pageData.title,
-  description: pageData.description,
+  description: "Transform your space with Rahnimo's affordable interior design ideas and expert tips in Bangladesh. Discover budget-friendly solutions and creative inspiration.",
   keywords: pageData.keywords,
   openGraph: {
     title: pageData.title,
-    description: pageData.description,
+    description: "Transform your space with Rahnimo's affordable interior design ideas and expert tips in Bangladesh. Discover budget-friendly solutions and creative inspiration.",
     type: "website",
     url: "https://rahnimo.com",
     images: [
@@ -24,16 +24,17 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: pageData.title,
-    description: pageData.description,
+    description: "Transform your space with Rahnimo's affordable interior design ideas and expert tips in Bangladesh.",
   },
   alternates: {
-    canonical: "https://rahnimo.com",
+    canonical: "https://rahnimo.com/",
   },
 };
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-sans transition-colors duration-300">
+      <h1 className="sr-only">Rahnimo | Premium Interior Design Studio in Bangladesh</h1>
       <HomePage />
     </div>
   );

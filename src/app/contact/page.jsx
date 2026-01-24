@@ -6,11 +6,11 @@ const pageData = getPageContent('contact');
 
 export const metadata = {
   title: pageData.title,
-  description: pageData.description,
+  description: "Book your interior design consultation in Bangladesh. Request a quote, schedule an appointment, or inquire about our design services for your space.",
   keywords: pageData.keywords,
   openGraph: {
     title: pageData.title,
-    description: pageData.description,
+    description: "Book your interior design consultation in Bangladesh. Request a quote, schedule an appointment, or inquire about our design services for your space.",
     type: "website",
     url: "https://rahnimo.com/contact",
     images: [
@@ -25,7 +25,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: pageData.title,
-    description: pageData.description,
+    description: "Book your interior design consultation in Bangladesh.",
   },
   alternates: {
     canonical: "https://rahnimo.com/contact",
@@ -33,7 +33,12 @@ export const metadata = {
 };
 
 const Contact = () => {
-    return <ContactClient />
+    return (
+        <>
+            <h1 className="sr-only">Interior Design Consultation in Bangladesh | Book with Rahnimo Studio</h1>
+            <ContactClient />
+        </>
+    )
 };
 
 export default Contact;

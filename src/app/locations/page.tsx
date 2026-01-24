@@ -46,10 +46,11 @@ export default function LocationsPage() {
 
   return (
     <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 max-w-[1000px] mx-auto">
+      <h1 className="sr-only">Interior Design Services in Bangladesh | Rahnimo Service Areas</h1>
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
           Interior Design Services Across Bangladesh
-        </h1>
+        </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           We proudly serve these cities throughout Bangladesh with our premium interior design services.
         </p>
